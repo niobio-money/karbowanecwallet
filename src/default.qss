@@ -1,21 +1,21 @@
 * {
-	color: #15315E;
+	color: #065635;
 }
 
 *:disabled {
-	color: #41548D;
+	color: #c3c3c3;
 }
 
 QTabBar {
-	background-color: #a8b6cb;
+	background-color: #B9F6CA;
 }
 
 QMainWindow {
-	background:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0	rgb(255, 255, 255) stop: 1.0 rgb(156, 193, 239)) url(":/images/bg.png") no-repeat bottom left;
+	background:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0	rgb(255, 255, 255) stop: 1 rgb(180, 204, 194));
 }
 
 QDialog {
-	background:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0	rgb(255, 255, 255) stop: 1.0 rgb(156, 193, 239));
+	background:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0	rgb(255, 255, 255) stop: 1 rgb(180, 204, 194));
 }
 
 QPushButton, QToolButton {
@@ -24,7 +24,7 @@ QPushButton, QToolButton {
 	border-radius: 2px;
 	padding: 2px 8px;
 	color: #fff;
-	background-color: #6496c8;
+	background-color: #065635;
 	border: none;
 	height: 26px;
 	selection-background-color: transparent;
@@ -37,36 +37,36 @@ QToolButton {
 
 QPushButton:pressed,
 QToolButton:pressed {
-	background-color: #346392;
+	background-color: #065635;
 }
 
 QPushButton:focus,
 QToolButton:focus {
-	background-color: #27496d;
+	background-color: #448067;
 }
 
 QPushButton:default,
 QToolButton:default {
-	background-color: #345476;
+	background-color: #065635;
 }
 
 QPushButton:hover,
 QToolButton:hover {
-	background-color: #628bb3;
+	background-color: #0a8572;
 }
 
 QPushButton:disabled,
 QToolButton:disabled {
-	background-color: #84acd3;
+	background-color: #82aa9a;
 }
 
 QPushButton::focus:hover,
 QToolButton::focus:hover {
-	background-color: #346392;
+	background-color: #0a8572;
 }
 
 QLineEdit {
-	border: 1px solid #6496c8;
+	border: 1px solid #065635;
 	border-radius: 2px;
 	padding: 2px 8px;
 	background: rgba(255,255,255,0.9);
@@ -75,7 +75,7 @@ QLineEdit {
 }
 
 QTextEdit {
-	border: 1px solid #6496c8;
+	border: 1px solid #065635;
 	border-radius: 2px;
 	padding: 2px 8px;
 	background: rgba(255,255,255,0.9);
@@ -83,11 +83,11 @@ QTextEdit {
 }
 
 QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QComboBox:focus, QTextEdit:focus {
-	border: 1px solid #27496d;
+	border: 1px solid #448067;
 }
 
 QSpinBox, QDoubleSpinBox, QComboBox {
-	border: 1px solid #6496c8;
+	border: 1px solid #065635;
 	border-radius: 2px;
 	padding: 2px 8px;
 	background: rgba(255,255,255,0.9);
@@ -142,8 +142,8 @@ QComboBox::drop-down {
 QComboBox QAbstractItemView {
 	border: none;
 	background: white;
-	color: #15315E;
-	selection-background-color: rgba(133, 167, 211, 0.2);
+	color: #065635;
+	selection-background-color: rgba(10, 133, 114, 0.2);
 }
 
 QComboBox:item {
@@ -153,7 +153,7 @@ QComboBox:item {
 }
 
 QComboBox:item:selected {
-	background-color: rgba(133, 167, 211, 0.1);
+	background-color: rgba(10, 133, 114, 0.1);
 	border: none;
 }
 
@@ -169,7 +169,7 @@ QSlider {
 }
 
 QSlider::groove:horizontal {
-	border: 1px solid #15315e;
+	border: 1px solid #065635;
 	background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, 
 		stop: 0 #ff0000,
 		stop: 0.2 #feef00,
@@ -182,14 +182,14 @@ QSlider::groove:horizontal {
 QSlider::sub-page:horizontal {
 	background: transparent;
 	background-image: url();
-	border: 1px solid #15315e;
+	border: 1px solid #065635;
 	height: 5px;
 	border-radius: 2px;
 }
 
 QSlider::add-page:horizontal {
 	background: #fff;
-	border: 1px solid #15315e;
+	border: 1px solid #065635;
 	height: 5px;
 	border-radius: 2px;
 }
@@ -222,7 +222,7 @@ QWidget#scrollAreaWidgetContents {
 }
 
 QToolBar#accountToolBar { 
-	background-color: rgb(133, 167, 211);
+	background-color: rgb(10, 133, 114);
 	border: 0; min-height: 71px;
 }
 
@@ -233,7 +233,7 @@ QToolBar {
 }
 
 QToolBar#toolBar {
-	background-color: rgba(32, 55, 92, 0.9);
+	background-color: rgba(10, 10, 10, 0.9);
 	width: 150px; 
 	min-width: 150px; 
 	spacing: 0; 
@@ -259,23 +259,31 @@ QToolBar#toolBar QToolButton{
 }
 
 QToolBar#toolBar QToolButton:pressed {
-	background-color: rgba(133, 167, 211, 0.5);
+	background-color: rgba(10, 133, 114, 0.5);
 }
 
 QToolBar#toolBar QToolButton:checked {
-	background-color: rgba(133, 167, 211, 0.6);
+	background-color: rgba(10, 133, 114, 0.6);
 }
 
 QToolBar#toolBar QToolButton:hover {
-	background-color: rgba(133, 167, 211, 0.1);
+	background-color: rgba(10, 133, 114, 0.1);
 }
 
 QToolBar#toolBar QToolButton::checked:hover {
-	background-color: rgba(133, 167, 211, 0.4);
+	background-color: rgba(10, 133, 114, 0.4);
 }
 
 QStatusBar#statusBar {
 	background-color: rgba(222, 234, 250, 0.7);
+}
+
+#m_connectionDialogLabel1, #m_connectionDialogLabel2, #m_connectionDialogLabel3, #m_connectionDialogLabel4{
+	color: #333333;
+}
+
+#m_accountFrame * {
+	color: #FFFFFF;
 }
 
 #m_accountFrame #m_addressEdit {
@@ -293,16 +301,16 @@ QStatusBar#statusBar {
 }
 
 #m_accountFrame #totalBalance {
-	color: #15315e;
+	color: #FFFFFF;
 }
 
 #m_accountFrame #addressStatusLabel {
-	color: #41548D;
+	color: #81C784;
 }
 
 QToolTip{
 	color: #ffffff;
-	background-color: #233E69;
+	background-color: #065635;
 	border: none;
 	padding: 4px;
 	opacity: 230;
