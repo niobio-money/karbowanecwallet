@@ -48,6 +48,44 @@
     <number>0</number>
    </property>
    <item>
+    <widget class="QLabel" name="label_3">
+     <property name="minimumSize">
+      <size>
+       <width>70</width>
+       <height>70</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>70</width>
+       <height>70</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>:/images/logo.png</pixmap>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>10</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
     <layout class="QVBoxLayout" name="verticalLayout_3">
      <property name="spacing">
       <number>1</number>
@@ -58,6 +96,22 @@
      <property name="rightMargin">
       <number>0</number>
      </property>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
      <item>
       <widget class="QLabel" name="label">
        <property name="minimumSize">
@@ -177,7 +231,7 @@
           <string>...</string>
          </property>
          <property name="icon">
-          <iconset resource="../../resources.qrc">
+          <iconset>
            <normaloff>:/icons/copy</normaloff>:/icons/copy</iconset>
          </property>
         </widget>
@@ -200,7 +254,7 @@
           <string>...</string>
          </property>
          <property name="icon">
-          <iconset resource="../../resources.qrc">
+          <iconset>
            <normaloff>:/icons/qrcode</normaloff>:/icons/qrcode</iconset>
          </property>
         </widget>
@@ -330,26 +384,8 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../resources.qrc"/>
- </resources>
+ <resources/>
  <connections>
-  <connection>
-   <sender>m_copyButton</sender>
-   <signal>clicked()</signal>
-   <receiver>AccountFrame</receiver>
-   <slot>copyAddress()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>818</x>
-     <y>26</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>422</x>
-     <y>295</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>m_qrButton</sender>
    <signal>clicked()</signal>
@@ -363,6 +399,22 @@
     <hint type="destinationlabel">
      <x>494</x>
      <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_copyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AccountFrame</receiver>
+   <slot>copyAddress()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>818</x>
+     <y>26</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>422</x>
+     <y>295</y>
     </hint>
    </hints>
   </connection>

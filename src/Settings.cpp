@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Cryptonote developers
 // Copyright (c) 2015-2016 XDN developers
-// Copyright (c) 2016 The Karbowanec developers
+// Copyright (c) 2016 - 2018 Niobio developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -89,7 +89,7 @@ void Settings::load() {
   }
 
   QStringList defaultPoolList;
-  defaultPoolList << "us-nbr.4miner.me:3334" << "nb.selvahost.com.br:3333" << "us-nbr.4miner.me:5556";
+  defaultPoolList << "nbr.openminer.net:47900" << "nb.selvahost.com.br:3333" << "us-nbr.4miner.me:3334" << "nbr-pool.ddns.net:3333" << "niobiopool.com.br:3331" << "us-nbr.4miner.me:5556";
   if (!m_settings.contains(OPTION_MINING_POOLS)) {
     setMiningPoolList(QStringList() << defaultPoolList);
   } else {
@@ -103,7 +103,12 @@ void Settings::load() {
   }
 
   QStringList defaultNodesList;
-  defaultNodesList << "45.55.141.227:8314" << "35.225.224.17:8314" << "35.205.250.90:8314" << "35.227.102.144:8314" << "35.199.180.121:8314" << "35.194.207.184:8314" << "66.70.167.192:8314" << "192.99.133.153:8314" << "138.197.222.188:8314";
+  defaultNodesList << "remote-nbr-hydra.niobioco.in:8314"
+  << "remote-nbr-centaurus.niobioco.in:8314"
+  << "niobiocash.rdp.network:8314"
+  << "66.70.167.192:8314"
+  << "192.99.133.153:8314"
+  << "138.197.222.188:8314";
   if (!m_settings.contains(OPTION_RPCNODES)) {
     setRpcNodesList(QStringList() << defaultNodesList);
   } else {

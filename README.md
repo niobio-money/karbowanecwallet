@@ -1,19 +1,20 @@
 **1. Clone wallet sources**
 
 ```
-git clone https://github.com/seredat/karbowanecwallet.git
+git clone https://github.com/niobio-cash/niobio-wallet.git
+git submodule update --init
 ```
 
-**2. Set symbolic link to coin sources at the same level as `src`. For example:**
+**2. Install the dependencies**
+- g++
+- cmake
+- boost
+- qt5
+- qttools5 <only needed for generate/update .qm language files>
 
+On Ubuntu:
 ```
-ln -s ../karbowanec cryptonote
-```
-
-Alternative way is to create git submodule:
-
-```
-git submodule add https://github.com/seredat/karbowanec.git cryptonote
+sudo apt-get install qt5-default qttools5-dev-tools cmake libboost-all-dev g++
 ```
 
 **3. Build**
