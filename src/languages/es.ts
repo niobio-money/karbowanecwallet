@@ -12,8 +12,8 @@
         <translation>Cerrar</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Karbowanec v. %1&lt;/p&gt;&lt;p&gt;This is the next generation anonymous cryptocurrency based on CryptoNote.&lt;/p&gt;&lt;p&gt;Copyright (c) 2012-2015. CryptoNote Developers&lt;/p&gt;&lt;p&gt;Copyright (c) 2015-2016. DigitalNote Developers&lt;/p&gt;&lt;p&gt;Copyright (c) 2016-2017. Karbowanec Developers&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://cryptonote.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://cryptonote.org/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://karbowanec.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://karbowanec.com/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Karbowanec v. %1&lt;/p&gt;&lt;p&gt;Esta es la criptomoneda anónima de próxima generación basada en CryptoNote.&lt;/p&gt;&lt;p&gt;Copyright (c) 2012-2015. CryptoNote Developers&lt;/p&gt;&lt;p&gt;Copyright (c) 2015-2016. DigitalNote Developers&lt;/p&gt;&lt;p&gt;Copyright (c) 2016-2017. Karbowanec Developers&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://cryptonote.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://cryptonote.org/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://www.niobiocash.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.niobiocash.com/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Niobio Wallet v. %1&lt;/p&gt;&lt;p&gt;This is the next generation anonymous cryptocurrency based on CryptoNote.&lt;/p&gt;&lt;p&gt;Copyright (c) 2012-2015. CryptoNote Developers&lt;br/&gt;Copyright (c) 2015-2016. DigitalNote Developers&lt;br/&gt;Copyright (c) 2016-2017. Karbowanec Developers&lt;br/&gt;Copyright (c) 2017-2018. Niobio Developers&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;https://cryptonote.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://cryptonote.org/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://karbowanec.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://karbowanec.com/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://niobiocash.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://niobiocash.com/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Niobio Wallet v. %1&lt;/p&gt;&lt;p&gt;This is the next generation anonymous cryptocurrency based on CryptoNote.&lt;/p&gt;&lt;p&gt;Copyright (c) 2012-2015. CryptoNote Developers&lt;br/&gt;Copyright (c) 2015-2016. DigitalNote Developers&lt;br/&gt;Copyright (c) 2016-2017. Karbowanec Developers&lt;br/&gt;Copyright (c) 2017-2018. Niobio Developers&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;https://cryptonote.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://cryptonote.org/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://karbowanec.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://karbowanec.com/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://niobiocash.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://niobiocash.com/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -52,7 +52,7 @@
     </message>
     <message>
         <source> krb</source>
-        <translation> nbr</translation>
+        <translation type="vanished"> nbr</translation>
     </message>
     <message>
         <source>Frame</source>
@@ -65,6 +65,10 @@
     <message>
         <source>0.00</source>
         <translation>0.00</translation>
+    </message>
+    <message>
+        <source> nbr</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -159,6 +163,10 @@
         <source>Español</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Português</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChangePasswordDialog</name>
@@ -194,12 +202,12 @@
 <context>
     <name>ConfirmSendDialog</name>
     <message>
-        <source>Comfirm sending %1 KRB</source>
+        <source>Comfirm sending %1 NBR</source>
         <translatorcomment>Ошибка в английском слове Comfirm (правильно Confirm)</translatorcomment>
         <translation type="vanished">Confirma el envío de %1 NBR</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Are you sure you want to send &lt;strong&gt;%1 KRB&lt;/strong&gt;?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Are you sure you want to send &lt;strong&gt;%1 NBR&lt;/strong&gt;?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translatorcomment>Нужно добавить  знак &quot;¿&quot; перед вопросом</translatorcomment>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;¿Estás seguro de que quieres enviar &lt;strong&gt;%1 NBR&lt;/strong&gt;?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -213,7 +221,11 @@
     </message>
     <message>
         <source>Confirm sending %1 KRB</source>
-        <translation type="unfinished">Confirma el envío de %1 NBR</translation>
+        <translation type="obsolete">Confirma el envío de %1 NBR</translation>
+    </message>
+    <message>
+        <source>Confirm sending %1 NBR</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -268,11 +280,15 @@
     </message>
     <message>
         <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends 0.25% fee from each transaction to the node, but no more than 10 KRB.</source>
-        <translation>El monedero se conectará al nodo remoto que se ejecuta en la red local o global. Por favor, seleccione nodo o especifique la dirección IP o el nombre de dominio y puerto. En este modo, el monedero envía una comisión del 0.25% de cada transacción al nodo, pero no más de 10 NBR.</translation>
+        <translation type="vanished">El monedero se conectará al nodo remoto que se ejecuta en la red local o global. Por favor, seleccione nodo o especifique la dirección IP o el nombre de dominio y puerto. En este modo, el monedero envía una comisión del 0.25% de cada transacción al nodo, pero no más de 10 NBR.</translation>
     </message>
     <message>
         <source>Remove node</source>
         <translation>Eliminar nodo</translation>
+    </message>
+    <message>
+        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends 0.25% fee from each transaction to the node, but no more than 10 NBR.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -868,7 +884,11 @@ Por favor, espera...</translation>
     <name>PaymentServer</name>
     <message>
         <source>Cannot start karbowanec: click-to-pay handler</source>
-        <translation>No se puede iniciar niobio: controlador de clic para pagar</translation>
+        <translation type="vanished">No se puede iniciar niobio: controlador de clic para pagar</translation>
+    </message>
+    <message>
+        <source>Cannot start niobio: click-to-pay handler</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -911,17 +931,21 @@ Por favor, espera...</translation>
     </message>
     <message>
         <source>%1 wallet already running</source>
-        <translation>%1 el monederoya está ejecutándose</translation>
+        <translation type="vanished">%1 el monederoya está ejecutándose</translation>
     </message>
     <message>
         <source>New version available</source>
-        <translation>Nueva versión disponible</translation>
+        <translation type="vanished">Nueva versión disponible</translation>
     </message>
     <message>
         <source>There is update available.
 Do you want to go to download page?</source>
-        <translation>Hay una actualización disponible.
+        <translation type="vanished">Hay una actualización disponible.
 ¿Quieres ir a la página de descarga?</translation>
+    </message>
+    <message>
+        <source>%1 wallet already running or I cannot create lock file %2. Check your permissions.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1197,11 +1221,11 @@ Do you want to go to download page?</source>
     <name>Updater</name>
     <message>
         <source>Unable to check for update</source>
-        <translation>No se puede verificar la actualización</translation>
+        <translation type="vanished">No se puede verificar la actualización</translation>
     </message>
     <message>
         <source>Error: %1</source>
-        <translation>Error: %1</translation>
+        <translation type="vanished">Error: %1</translation>
     </message>
 </context>
 <context>
@@ -1385,7 +1409,7 @@ Do you want to go to download page?</source>
         <translation>Ejecutar la aplicación en modo minimizado</translation>
     </message>
     <message>
-        <source>Karbowanec wallet</source>
+        <source>Niobio wallet</source>
         <translation>El monedero de Karbowanec</translation>
     </message>
     <message>
@@ -1397,7 +1421,7 @@ Do you want to go to download page?</source>
     <name>WalletGui::ConfirmSendDialog</name>
     <message>
         <source>Confirm sending %1 KRB</source>
-        <translation>Confirma el envío de %1 NBR</translation>
+        <translation type="vanished">Confirma el envío de %1 NBR</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Payment ID: %1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1407,6 +1431,10 @@ Do you want to go to download page?</source>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Are you sure you want to send &lt;strong&gt;without Payment ID&lt;/strong&gt;?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translatorcomment>Нужен знак &quot;¿&quot; перед вопросом</translatorcomment>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;¿Estás seguro de que desea enviar &lt;strong&gt;sin ID de pago&lt;/strong&gt;?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Confirm sending %1 NBR</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1575,7 +1603,7 @@ Are you sure?</source>
     </message>
     <message>
         <source>Karbo Wallet %1</source>
-        <translation>Karbo Monedero %1</translation>
+        <translation type="vanished">Karbo Monedero %1</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
@@ -1648,6 +1676,10 @@ Are you sure?</source>
     <message>
         <source>Wrong wallet file extension, wallet file should have &quot;.wallet&quot;, &quot;.keys&quot; or &quot;.trackingwallet&quot; extension.</source>
         <translation>La extensión incorrecta del archivo del monedero, el archivo del monedero debe tener la extensión &quot;.wallet&quot;, &quot;.keys&quot; o &quot;.trackingwallet&quot;.</translation>
+    </message>
+    <message>
+        <source>Niobio Wallet %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1886,6 +1918,10 @@ Are you sure?</source>
     <message>
         <source>Sent to myself</source>
         <translation>Enviado a mi mismo</translation>
+    </message>
+    <message>
+        <source>See on &amp;block explorer</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

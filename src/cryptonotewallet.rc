@@ -4,8 +4,8 @@ IDI_ICON1               ICON    "images\karbowanez.ico"
 
 #define VER_FILEVERSION             1,0,0,0
 #define VER_FILEVERSION_STR         "1.0.0.3\0"
-#define VER_PRODUCTVERSION          1,2,0
-#define VER_PRODUCTVERSION_STR      "1.2.0\0"
+#define VER_PRODUCTVERSION          1,3,1
+#define VER_PRODUCTVERSION_STR      "1.3.1\0"
 #define VER_FILEDESCRIPTION_STR     "Niobio"
 #define VER_INTERNALNAME_STR        "Niobio"
 #define VER_LEGALCOPYRIGHT_STR      "Copyright (C) 2017-2018, Niobio Developers"

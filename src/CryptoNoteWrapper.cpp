@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Cryptonote developers
-// Copyright (c) 2016-2017 The Karbowanec developers
+// Copyright (c) 2016-2017 - 2018 Niobio developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -427,16 +427,19 @@ public:
     m_coreConfig(coreConfig),
     m_netNodeConfig(netNodeConfig),
     m_protocolHandler(currency, m_dispatcher, m_core, nullptr, logManager),
-    m_core(currency, &m_protocolHandler, logManager, true),
+    m_core(currency, &m_protocolHandler, logManager, true, 2048), // FIXME: cache size should not be fixed here
     m_nodeServer(m_dispatcher, m_protocolHandler, logManager),
     m_node(m_core, m_protocolHandler) {
 
-    m_core.set_cryptonote_protocol(&m_protocolHandler);
-    m_protocolHandler.set_p2p_endpoint(&m_nodeServer);
     CryptoNote::Checkpoints checkpoints(logManager);
     for (const CryptoNote::CheckpointData& checkpoint : CryptoNote::CHECKPOINTS) {
       checkpoints.add_checkpoint(checkpoint.height, checkpoint.blockId);
     }
+    if (!Settings::instance().isTestnet()) {
+      m_core.set_checkpoints(std::move(checkpoints));
+    }
+    m_core.set_cryptonote_protocol(&m_protocolHandler);
+    m_protocolHandler.set_p2p_endpoint(&m_nodeServer);
   }
 
   ~InprocessNode() override {

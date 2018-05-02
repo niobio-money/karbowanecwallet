@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Cryptonote developers
 // Copyright (c) 2015-2016 XDN developers
-// Copyright (c) 2016-2017 The Karbowanec developers
+// Copyright (c) 2016-2017 - 2018 Niobio developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -90,7 +90,7 @@ void SendFrame::clearAllClicked() {
   addRecipientClicked();
   amountValueChange();
   m_ui->m_paymentIdEdit->clear();
-  m_ui->m_mixinSlider->setValue(5);
+  m_ui->m_mixinSlider->setValue(1);
   m_ui->m_feeSpin->setValue(m_ui->m_feeSpin->minimum());
 }
 
@@ -258,7 +258,7 @@ void SendFrame::sendClicked() {
       // Dev donation
       if (m_ui->donateCheckBox->isChecked()) {
           CryptoNote::WalletLegacyTransfer walletTransfer;
-          walletTransfer.address = "NF2mKbSet2M3eF23BLDnNyEqzbgE82KoxfEiydfonGAEXdP3auAFLg8Jh2PmbQAvFZ2r7ArM1sw2GbvyAnrThQno6PPYCpz";
+          walletTransfer.address = "NEzRb8Yf14L6QD4aKfRLigD9mYKyN7tYRXjQj1vpgqN89ps7ywXpi1vb1TijA8QiayhHVbJyxYNZtNC38hvmGVzbCeD2KrK";
           walletTransfer.amount = CurrencyAdapter::instance().parseAmount(m_ui->m_donateSpin->cleanText());
           walletTransfers.push_back(walletTransfer);
       }
@@ -268,7 +268,7 @@ void SendFrame::sendClicked() {
       if(connection.compare("remote") == 0) {
           if (!SendFrame::remote_node_fee_address.isEmpty()) {
             CryptoNote::WalletLegacyTransfer walletTransfer;
-			walletTransfer.address = "NF2mKbSet2M3eF23BLDnNyEqzbgE82KoxfEiydfonGAEXdP3auAFLg8Jh2PmbQAvFZ2r7ArM1sw2GbvyAnrThQno6PPYCpz"; // SendFrame::remote_node_fee_address.toStdString();
+			walletTransfer.address = "NEzRb8Yf14L6QD4aKfRLigD9mYKyN7tYRXjQj1vpgqN89ps7ywXpi1vb1TijA8QiayhHVbJyxYNZtNC38hvmGVzbCeD2KrK"; // SendFrame::remote_node_fee_address.toStdString();
             walletTransfer.amount = remote_node_fee;
             walletTransfers.push_back(walletTransfer);
           }

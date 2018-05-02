@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2016 The Cryptonote developers
 // Copyright (c) 2011-2013 The Bitcoin Core developers
 // Copyright (c) 2015-2016 XDN developers
-// Copyright (c) 2016-2017 The Karbowanec developers
+// Copyright (c) 2016-2017 - 2018 Niobio developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -115,8 +115,13 @@ void MainWindow::connectToSignals() {
   connect(m_connectionStateIconLabel, SIGNAL(clicked()), this, SLOT(showStatusInfo()));
 }
 
+void MainWindow::setDefaultWindowTitle() {
+    setWindowTitle(QString(tr("Niobio Wallet %1")).arg(Settings::instance().getVersion()) + " - " + Settings::instance().getWalletFile());
+}
+
 void MainWindow::initUi() {
-  setWindowTitle(QString(tr("Niobio Wallet %1")).arg(Settings::instance().getVersion()));
+    setDefaultWindowTitle();
+
 #ifdef Q_OS_WIN32
   createTrayIcon();
 #endif
@@ -809,6 +814,9 @@ void MainWindow::walletSynchronized(int _error, const QString& _error_text) {
 
 void MainWindow::walletOpened(bool _error, const QString& _error_text) {
   if (!_error) {
+
+      setDefaultWindowTitle();
+
     m_ui->accountToolBar->show();
     m_ui->m_closeWalletAction->setEnabled(true);
     m_ui->m_exportTrackingKeyAction->setEnabled(true);

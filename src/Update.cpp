@@ -1,4 +1,4 @@
-// Copyright (c) 2016 The Karbowanec developers
+// Copyright (c) 2016 - 2018 Niobio developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include "Update.h"
@@ -66,7 +66,7 @@ void Updater::checkForUpdate()
     {
         connect(manager, SIGNAL(finished(QNetworkReply*)),
                 this, SLOT(replyFinished(QNetworkReply*)));
-        manager->get(QNetworkRequest(QUrl(KRBCOIN_UPDATE_URL)));
+        manager->get(QNetworkRequest(QUrl(NBRCOIN_UPDATE_URL)));
     }
 }
 
@@ -88,7 +88,7 @@ void Updater::replyFinished (QNetworkReply *reply)
          if (ourVersion < remoteVersion) {
 
              if (QMessageBox::warning(nullptr, QObject::tr("New version available"), QObject::tr("There is update available.\nDo you want to go to download page?"), QMessageBox::Ok, QMessageBox::Cancel) == QMessageBox::Ok) {
-                 QString link = "http://niobio.money/#download";
+                 QString link = "https://github.com/niobio-cash/niobio-wallet/releases";
                  QDesktopServices::openUrl(QUrl(link));
              }
 

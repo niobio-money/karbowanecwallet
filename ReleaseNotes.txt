@@ -1,0 +1,6 @@
+Release notes Niobio Cash Wallet
+
+v.1.3.1
+- Fix checkpoint range handling for PoW verification
+- Added option to see transaction on explorer
+- Small bug fixes
