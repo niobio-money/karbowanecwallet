@@ -47,6 +47,8 @@ private:
   void walletSynchronized(int _error, const QString& _error_text);
   void walletSynchronizationInProgress(quint64 _current, quint64 _total);
   void insertPaymentID(QString _paymentid);
+  void insertMixin(quint32 _mixinValue);
+  void insertDescription(QString _description);
   static bool isValidPaymentId(const QByteArray& _paymentIdString);
   void onAddressFound(const QString& _address);
   void reset();

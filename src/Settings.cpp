@@ -116,17 +116,17 @@ void Settings::load() {
   QStringList defaultNodesList;
   defaultNodesList << "remote-nbr-hydra.niobioco.in:8314"
   << "remote-nbr-002.niobioco.in:8314";
-  //if (!m_settings.contains(OPTION_RPCNODES)) {
-  setRpcNodesList(QStringList() << defaultNodesList);
-  //} else {
-  //  QStringList nodesList = getRpcNodesList();
-  //  Q_FOREACH (const QString& node, defaultNodesList) {
-  //    if (!nodesList.contains(node)) {
-  //      nodesList << node;
-  //    }
-  //  }
-  //  setRpcNodesList(nodesList);
-  //}
+  if (!m_settings.contains(OPTION_RPCNODES)) {
+    setRpcNodesList(QStringList() << defaultNodesList);
+  } else {
+    QStringList nodesList = getRpcNodesList();
+    Q_FOREACH (const QString& node, defaultNodesList) {
+      if (!nodesList.contains(node)) {
+        nodesList << node;
+      }
+    }
+    setRpcNodesList(nodesList);
+  }
 
   if (!m_settings.contains("recentWallets")) {
      QStringList recentWallets;

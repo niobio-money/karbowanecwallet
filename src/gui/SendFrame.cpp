@@ -48,7 +48,10 @@ SendFrame::SendFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::SendFrame
   m_ui->m_donateSpin->setSuffix(" " + CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_feeSpin->setMinimum(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFee()).toDouble());
   m_ui->m_remote_label->hide();
+  m_ui->m_remote_fee_help->hide();
+  m_ui->m_remote_fee_value->hide();
   m_ui->m_sendButton->setEnabled(false);
+  m_ui->m_descriptionFromCounterParty->clear();
 
   QRegExp hexMatcher("^[0-9A-F]{64}$", Qt::CaseInsensitive);
   QValidator *validator = new QRegExpValidator(hexMatcher, this);
@@ -110,6 +113,7 @@ void SendFrame::clearAllClicked() {
   m_ui->m_paymentIdEdit->clear();
   m_ui->m_mixinSlider->setValue(1);
   m_ui->m_feeSpin->setValue(m_ui->m_feeSpin->minimum());
+  m_ui->m_descriptionFromCounterParty->clear();
 }
 
 void SendFrame::reset() {
@@ -142,10 +146,12 @@ void SendFrame::amountValueChange() {
         if (remote_node_fee < CurrencyAdapter::instance().getMinimumFee()) {
             remote_node_fee = CurrencyAdapter::instance().getMinimumFee();
         }
-        if (remote_node_fee > 1000000) {
-            remote_node_fee = 1000000;
+        if (remote_node_fee > 1000000000) {
+            remote_node_fee = 1000000000;
         }
     }
+
+    m_ui->m_remote_fee_value->setText(CurrencyAdapter::instance().formatAmount(remote_node_fee)  + " NBR");
 
     QVector<float> donations;
     donations.clear();
@@ -179,9 +185,19 @@ void SendFrame::insertPaymentID(QString _paymentid) {
     m_ui->m_paymentIdEdit->setText(_paymentid);
 }
 
+void SendFrame::insertMixin(quint32 _mixinValue) {
+    m_ui->m_mixinSlider->setValue(_mixinValue);
+}
+
+void SendFrame::insertDescription(QString _description) {
+    m_ui->m_descriptionFromCounterParty->setText(_description);
+}
+
 void SendFrame::onAddressFound(const QString& _address) {
     SendFrame::remote_node_fee_address = _address;
     m_ui->m_remote_label->show();
+    m_ui->m_remote_fee_help->show();
+    m_ui->m_remote_fee_value->show();
 }
 
 void SendFrame::openUriClicked() {
@@ -225,7 +241,9 @@ void SendFrame::parsePaymentRequest(QString _request) {
 
     QUrlQuery uriQuery(_request);
 
-    quint64 amount = CurrencyAdapter::instance().parseAmount(uriQuery.queryItemValue("amount"));
+    //quint64 amount = CurrencyAdapter::instance().parseAmount(uriQuery.queryItemValue("amount"));
+    bool ok;
+    quint64 amount = uriQuery.queryItemValue("amount").toLong(&ok, 10);
     if(amount != 0){
         m_transfers.at(0)->TransferFrame::setAmount(amount);
     }
@@ -238,6 +256,28 @@ void SendFrame::parsePaymentRequest(QString _request) {
     QString payment_id = uriQuery.queryItemValue("payment_id");
     if(!payment_id.isEmpty()){
         SendFrame::insertPaymentID(payment_id);
+    }
+
+    QString mixinStr = uriQuery.queryItemValue("anon");
+    quint32 mixin = mixinStr.toInt();
+    if(mixin != 0){
+      SendFrame::insertMixin(mixin);
+    }
+
+    QString priority = uriQuery.queryItemValue("priority").toLower();
+    if(!priority.isEmpty()){
+      if(priority == "low") {
+        m_ui->m_feeSpin->setValue(0.00001);
+      } else if (priority == "medium") {
+        m_ui->m_feeSpin->setValue(0.00005);
+      } else if (priority == "high") {
+        m_ui->m_feeSpin->setValue(0.0001);
+      }
+    }
+
+    QString description = uriQuery.queryItemValue("desc");
+    if(!description.isEmpty()){
+      SendFrame::insertDescription(description);
     }
 
 }
