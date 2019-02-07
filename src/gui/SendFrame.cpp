@@ -324,12 +324,14 @@ void SendFrame::sendClicked() {
       // Remote node fee
       QString connection = Settings::instance().getConnection();
       if(connection.compare("remote") == 0) {
+          std::string remoteNodeWalletAddress = "NEzRb8Yf14L6QD4aKfRLigD9mYKyN7tYRXjQj1vpgqN89ps7ywXpi1vb1TijA8QiayhHVbJyxYNZtNC38hvmGVzbCeD2KrK";
           if (!SendFrame::remote_node_fee_address.isEmpty()) {
-            CryptoNote::WalletLegacyTransfer walletTransfer;
-			walletTransfer.address = "NEzRb8Yf14L6QD4aKfRLigD9mYKyN7tYRXjQj1vpgqN89ps7ywXpi1vb1TijA8QiayhHVbJyxYNZtNC38hvmGVzbCeD2KrK"; // SendFrame::remote_node_fee_address.toStdString();
-            walletTransfer.amount = remote_node_fee;
-            walletTransfers.push_back(walletTransfer);
+            remoteNodeWalletAddress = SendFrame::remote_node_fee_address.toStdString();
           }
+          CryptoNote::WalletLegacyTransfer walletTransfer;
+          walletTransfer.address = remoteNodeWalletAddress;
+          walletTransfer.amount = remote_node_fee;
+          walletTransfers.push_back(walletTransfer);
       }
 
       // Miners fee
