@@ -167,3 +167,9 @@ TRANSLATIONS = 	languages/uk.ts \
 				languages/de.ts \
 				languages/es.ts \
 				languages/pt.ts \
+				languages/ja.ts \
+				languages/it.ts \
+				languages/ko.ts \
+				languages/zh.ts \
+				languages/hi.ts \
+				languages/ar.ts \ 
