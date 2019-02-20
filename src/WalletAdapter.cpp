@@ -100,7 +100,7 @@ void WalletAdapter::open(const QString& _password) {
   m_wallet = NodeAdapter::instance().createWallet();
   m_wallet->addObserver(this);
 
-  if (QFile::exists(Settings::instance().getWalletFile())) {  
+  if (QFile::exists(Settings::instance().getWalletFile())) {
     if (Settings::instance().getWalletFile().endsWith(".keys")) {
       if (!importLegacyWallet(_password)) {
         return;
@@ -135,7 +135,7 @@ void WalletAdapter::createWallet() {
     m_wallet->initAndGenerateDeterministic("");
 
     VerifyMnemonicSeedDialog dlg(nullptr);
-    if (!dlg.exec() == QDialog::Accepted) {
+    if (!(dlg.exec() == QDialog::Accepted)) {
       return;
     }
   } catch (std::system_error&) {

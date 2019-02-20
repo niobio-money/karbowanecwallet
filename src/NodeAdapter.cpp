@@ -158,7 +158,7 @@ bool NodeAdapter::init() {
       QUrl remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
       m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), *this, remoteNodeUrl.host().toStdString(), remoteNodeUrl.port());
       QTimer initTimer;
-      initTimer.setInterval(3000);
+      initTimer.setInterval(10000);
       initTimer.setSingleShot(true);
       initTimer.start();
       m_node->init([this](std::error_code _err) {

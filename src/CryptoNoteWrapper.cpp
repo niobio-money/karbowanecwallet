@@ -413,7 +413,7 @@ private:
   CryptoNote::NodeRpcProxy m_node;
   System::Dispatcher m_dispatcher;
 
-  void peerCountUpdated(size_t count) {
+  void peerCountUpdated(size_t count) override {
     m_callback.peerCountUpdated(*this, count);
   }
 
@@ -582,7 +582,7 @@ private:
   CryptoNote::InProcessNode m_node;
   std::future<bool> m_nodeServerFuture;
 
-  void peerCountUpdated(size_t count) {
+  void peerCountUpdated(size_t count) override {
     //m_callback.peerCountUpdated(*this, count);
     m_callback.peerCountUpdated(*this, m_nodeServer.get_connections_count() - 1);
   }

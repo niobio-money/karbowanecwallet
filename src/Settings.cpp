@@ -277,7 +277,7 @@ QString Settings::getCurrentRemoteNode() const {
         remotenode = m_settings.value(OPTION_REMOTE_NODE).toString();
 	}
 	else {
-		remotenode = "45.55.141.227:8313";
+		remotenode = "remote-nbr-hydra.niobioco.in:8314";
 	}
     return remotenode;
 }
