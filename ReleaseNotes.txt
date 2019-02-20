@@ -1,5 +1,8 @@
 Release notes Niobio Cash Wallet
 
+v1.3.7
+- NCIP 0004: Allows flexible wallet nodes fee
+
 v1.3.6
 - NCIP 0004: Include informational messages when sending transactions using remote node
 - NCIP 0008: Reference implementation of new URI scheme for payment orders
