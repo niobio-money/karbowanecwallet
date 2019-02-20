@@ -39,6 +39,7 @@ private:
   SendGlassFrame* m_glassFrame;
 
   QString remote_node_fee_address;
+  float remote_node_fee_percent;
   quint64 remote_node_fee;
   quint64 total_amount;
 
@@ -50,7 +51,7 @@ private:
   void insertMixin(quint32 _mixinValue);
   void insertDescription(QString _description);
   static bool isValidPaymentId(const QByteArray& _paymentIdString);
-  void onAddressFound(const QString& _address);
+  void onAddressFound(const QJsonObject& _remoteNodeData);
   void reset();
 
   Q_SLOT void addRecipientClicked();

@@ -25,7 +25,7 @@ private:
   void readyRead();
 
 Q_SIGNALS:
-  void addressFoundSignal(const QString& _address);
+  void addressFoundSignal(const QJsonObject& _remoteNodeData);
 };
 
 }

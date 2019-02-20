@@ -42,11 +42,10 @@ void AddressProvider::readyRead() {
   }
 
   QJsonObject obj = doc.object();
-
   QString address = obj.value("fee_address").toString();
 
   if (!address.isEmpty()) {
-    Q_EMIT addressFoundSignal(address);
+    Q_EMIT addressFoundSignal(obj);
   }
 }
 

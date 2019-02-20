@@ -106,6 +106,14 @@ quint64 CurrencyAdapter::parseAmount(const QString& _amountString) const {
   return amountString.toULongLong();
 }
 
+	QString CurrencyAdapter::formatPercent(float _amount) const {
+    QString s = 0;
+		if (_amount > 0) {
+		    s = QString::number(_amount);
+    }
+		return s;
+	}
+
 bool CurrencyAdapter::validateAddress(const QString& _address) const {
   CryptoNote::AccountPublicAddress internalAddress;
   return m_currency.parseAccountAddressString(_address.toStdString(), internalAddress);

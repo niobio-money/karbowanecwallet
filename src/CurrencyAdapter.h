@@ -25,6 +25,7 @@ public:
   quintptr getNumberOfDecimalPlaces() const;
   QString formatAmount(quint64 _amount) const;
   quint64 parseAmount(const QString& _amountString) const;
+  QString formatPercent(float _amount) const;
   bool validateAddress(const QString& _address) const;
   CryptoNote::AccountPublicAddress internalAddress(const QString& _address) const;
 
