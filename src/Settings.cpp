@@ -264,22 +264,22 @@ QStringList Settings::getRpcNodesList() const {
 }
 
 quint16 Settings::getCurrentLocalDaemonPort() const {
-    quint16 port;
-    if (m_settings.contains(OPTION_DAEMON_PORT)) {
-        port = m_settings.value(OPTION_DAEMON_PORT).toVariant().toInt();
-    }
-    return port;
+  quint16 port;
+  if (m_settings.contains(OPTION_DAEMON_PORT)) {
+    port = m_settings.value(OPTION_DAEMON_PORT).toVariant().toInt();
+  }
+  return port;
 }
 
 QString Settings::getCurrentRemoteNode() const {
-    QString remotenode;
-    if (m_settings.contains(OPTION_REMOTE_NODE)) {
-        remotenode = m_settings.value(OPTION_REMOTE_NODE).toString();
-	}
-	else {
-		remotenode = "remote-nbr-hydra.niobioco.in:8314";
-	}
-    return remotenode;
+  QString remotenode;
+  if (m_settings.contains(OPTION_REMOTE_NODE)) {
+    remotenode = m_settings.value(OPTION_REMOTE_NODE).toString();
+  }
+  else {
+    remotenode = "remote-nbr-hydra.niobioco.in:8314";
+  }
+  return remotenode;
 }
 
 QString Settings::getCurrentPool() const {

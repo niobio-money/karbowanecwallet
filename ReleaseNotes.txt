@@ -1,7 +1,7 @@
 Release notes Niobio Cash Wallet
 
 v1.3.7
-- NCIP 0004: Allows flexible wallet nodes fee
+- NCIP 0004: Allows flexible wallet node fee
 
 v1.3.6
 - NCIP 0004: Include informational messages when sending transactions using remote node
