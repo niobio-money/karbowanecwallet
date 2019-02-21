@@ -1288,8 +1288,8 @@ Do you want to go to download page?</source>
     </message>
     <message>
         <location filename="../gui/ui/sendframe.ui" line="491"/>
-        <source>Wallet is connected through remote node. Additional 0.25% fee will be applied.</source>
-        <translation>リモートノードを介してウォレットは接続されます。0.25%の追加手数料が適用されます。</translation>
+        <source>Wallet is connected through remote node. Additional fee of %1% will be applied, until a maximum limit of 10 NBR.</source>
+        <translation>リモートノードを介してウォレットは接続されます。%1%の追加手数料が適用されます。</translation>
     </message>
     <message>
         <location filename="../gui/ui/sendframe.ui" line="494"/>

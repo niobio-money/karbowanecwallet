@@ -1289,8 +1289,8 @@ Vuoi andare alla pagina dei download?</translation>
     </message>
     <message>
         <location filename="../gui/ui/sendframe.ui" line="491"/>
-        <source>Wallet is connected through remote node. Additional 0.25% fee will be applied.</source>
-        <translation>Il portafoglio è connesso tramite un nodo remoto. Sarà addebitata una commissione aggiuntiva dello 0,25%.</translation>
+        <source>Wallet is connected through remote node. Additional fee of %1% will be applied, until a maximum limit of 10 NBR.</source>
+        <translation>Il portafoglio è connesso tramite un nodo remoto. Sarà addebitata una commissione aggiuntiva dello %1%.</translation>
     </message>
     <message>
         <location filename="../gui/ui/sendframe.ui" line="494"/>

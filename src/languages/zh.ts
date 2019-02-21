@@ -1322,8 +1322,8 @@ Do you want to go to download page?</source>
     </message>
     <message>
         <location filename="../gui/ui/sendframe.ui" line="491"/>
-        <source>Wallet is connected through remote node. Additional 0.25% fee will be applied.</source>
-        <translation>钱包通过远程节点连接，将收取0.25％的额外费用。</translation>
+        <source>Wallet is connected through remote node. Additional fee of %1% will be applied, until a maximum limit of 10 NBR.</source>
+        <translation>钱包通过远程节点连接，将收取 %1％ 的额外费用。</translation>
     </message>
     <message>
         <location filename="../gui/ui/sendframe.ui" line="494"/>

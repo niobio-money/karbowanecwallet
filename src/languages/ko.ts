@@ -1347,8 +1347,8 @@ Do you want to go to download page?</source>
     </message>
     <message>
         <location filename="../gui/ui/sendframe.ui" line="491"/>
-        <source>Wallet is connected through remote node. Additional 0.25% fee will be applied.</source>
-        <translation>지갑은 원격 노드를 통해 연결되었습니다. 추가 0.25% 수수료가 부과됩니다.</translation>
+        <source>Wallet is connected through remote node. Additional fee of %1% will be applied, until a maximum limit of 10 NBR.</source>
+        <translation>지갑은 원격 노드를 통해 연결되었습니다. 추가 %1% 수수료가 부과됩니다.</translation>
     </message>
     <message>
         <location filename="../gui/ui/sendframe.ui" line="494"/>

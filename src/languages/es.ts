@@ -1082,8 +1082,8 @@ Do you want to go to download page?</source>
         <translation>Generar ID de pago</translation>
     </message>
     <message>
-        <source>Wallet is connected through remote node. Additional 0.25% fee will be applied, until a maximum limit of 10 NBR.</source>
-        <translation>El monedero está conectado a través de un nodo remoto. Se aplicará una tasa adicional de 0.25%.</translation>
+        <source>Wallet is connected through remote node. Additional fee of %1% will be applied, until a maximum limit of 10 NBR.</source>
+        <translation>El monedero está conectado a través de un nodo remoto. Se aplicará una tasa adicional de %1%.</translation>
     </message>
     <message>
         <source>Remote node mode</source>

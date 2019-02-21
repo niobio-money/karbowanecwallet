@@ -1083,8 +1083,8 @@ Você quer ir à página de dowload?</translation>
         <translation>Gerar ID</translation>
     </message>
     <message>
-        <source>Wallet is connected through remote node. Additional 0.25% fee will be applied, until a maximum limit of 10 NBR.</source>
-        <translation>A carteira está conectada através de um nó remoto. Será cobrada uma taxa adicional de 0,25%, com um limite máximo de 10 NBR.</translation>
+        <source>Wallet is connected through remote node. Additional fee of %1% will be applied, until a maximum limit of 10 NBR.</source>
+        <translation>A carteira está conectada através de um nó remoto. Será cobrada uma taxa adicional de %1%, com um limite máximo de 10 NBR.</translation>
     </message>
     <message>
         <source>Remote node mode</source>

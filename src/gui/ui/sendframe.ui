@@ -68,7 +68,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Wallet is connected through remote node. Additional fee will be applied, until a maximum limit of 10 NBR.</string>
+          <string>Wallet is connected through remote node. Additional fee of %1% will be applied, until a maximum limit of 10 NBR.</string>
          </property>
         </widget>
        </item>
@@ -168,7 +168,7 @@
         <string>Donate 0.1% to development fund:</string>
        </property>
        <property name="checked">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -251,16 +251,16 @@
         <number>8</number>
        </property>
        <property name="minimum">
-        <double>0.00010000</double>
+        <double>0.00001000</double>
        </property>
        <property name="maximum">
-        <double>999999999999999.00000000</double>
+        <double>10.00000000</double>
        </property>
        <property name="singleStep">
-        <double>0.00010000</double>
+        <double>0.00001000</double>
        </property>
        <property name="value">
-        <double>0.00010000</double>
+        <double>0.00001000</double>
        </property>
       </widget>
      </item>
@@ -313,7 +313,7 @@
         <number>8</number>
        </property>
        <property name="maximum">
-        <double>999999999999999.00000000</double>
+        <double>10.00000000</double>
        </property>
        <property name="singleStep">
         <double>0.10000000</double>

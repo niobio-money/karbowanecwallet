@@ -1068,8 +1068,8 @@ Do you want to go to download page?</source>
         <translation>Згенерувати ідентифікатор</translation>
     </message>
     <message>
-        <source>Wallet is connected through remote node. Additional 0.25% fee will be applied, until a maximum limit of 10 NBR.</source>
-        <translation>Гаманець підключений через віддалений вузол. Буде стягуватись додаткова комісія 0,25%.</translation>
+        <source>Wallet is connected through remote node. Additional fee of %1% will be applied, until a maximum limit of 10 NBR.</source>
+        <translation>Гаманець підключений через віддалений вузол. Буде стягуватись додаткова комісія %1%.</translation>
     </message>
     <message>
         <source>Remote node mode</source>

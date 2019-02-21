@@ -1338,7 +1338,7 @@ Do you want to go to download page?</source>
     </message>
     <message>
         <location filename="../gui/ui/sendframe.ui" line="491"/>
-        <source>Wallet is connected through remote node. Additional 0.25% fee will be applied.</source>
+        <source>Wallet is connected through remote node. Additional fee of %1% will be applied, until a maximum limit of 10 NBR.</source>
         <translation>المحفظة متصلة من خلال وحدة بعيدة. سيتم تطبيق رسوم إضافية بقيمة 0.25٪.</translation>
     </message>
     <message>

@@ -1073,8 +1073,8 @@ Möchten Sie die Download Seite besuchen?</translation>
         <translation>Generate Payment ID</translation>
     </message>
     <message>
-        <source>Wallet is connected through remote node. Additional 0.25% fee will be applied, until a maximum limit of 10 NBR.</source>
-        <translation>Brieftasche ist durch einen remote node verbunden. Zusätzlich werden 0.25% Gebühr erhoben.</translation>
+        <source>Wallet is connected through remote node. Additional fee of %1% will be applied, until a maximum limit of 10 NBR.</source>
+        <translation>Brieftasche ist durch einen remote node verbunden. Zusätzlich werden %1% Gebühr erhoben.</translation>
     </message>
     <message>
         <source>Remote node mode</source>
