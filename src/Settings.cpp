@@ -8,6 +8,8 @@
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonValue>
 #include <QSettings>
 #include <QStandardPaths>
 #include <QTextCodec>
@@ -15,6 +17,8 @@
 #include "CommandLineParser.h"
 #include "CurrencyAdapter.h"
 #include "Settings.h"
+#include "WalletNodes.h"
+#include <iostream>
 
 namespace WalletGui {
 
@@ -127,6 +131,8 @@ void Settings::load() {
     }
     setRpcNodesList(nodesList);
   }
+  auto wNodes = new WalletNodes;
+  wNodes->GetWalletNodes();
 
   if (!m_settings.contains("recentWallets")) {
      QStringList recentWallets;
