@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2016 The Cryptonote developers
 // Copyright (c) 2015-2016 XDN developers
 // Copyright (c) 2016 Karbowanec developers
+// Copyright (c) 2019 Niobio Cash developers <helder.garcia@gmail.com>
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -17,7 +18,6 @@ class AddressProvider : public QObject {
 public:
   AddressProvider(QObject *parent);
   ~AddressProvider();
-
   void getAddress(const QString& _urlString);
 
 private:

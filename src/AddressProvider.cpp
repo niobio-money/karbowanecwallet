@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2016 The Cryptonote developers
 // Copyright (c) 2015-2016 XDN developers
 // Copyright (c) 2016 Karbowanec developers
+// Copyright (c) 2019 Niobio Cash developers <helder.garcia@gmail.com>
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -26,7 +27,6 @@ void AddressProvider::getAddress(const QString& _urlString) {
   if (!url.isValid()) {
     return;
   }
-
   QNetworkRequest request(url);
   QNetworkReply* reply = m_networkManager.get(request);
   connect(reply, &QNetworkReply::readyRead, this, &AddressProvider::readyRead);
@@ -45,6 +45,11 @@ void AddressProvider::readyRead() {
   QString address = obj.value("fee_address").toString();
 
   if (!address.isEmpty()) {
+    QString _url = reply->url().toString();
+    _url.replace("/feeaddress", "");
+    _url.replace("https://", "");
+    _url.replace("http://", "");
+    obj.insert("url", _url);
     Q_EMIT addressFoundSignal(obj);
   }
 }
