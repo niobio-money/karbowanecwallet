@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2016 The Cryptonote developers
 // Copyright (c) 2011-2013 The Bitcoin Core developers
 // Copyright (c) 2015-2016 XDN developers
-// Copyright (c) 2016-2017 - 2018 Niobio developers - Derived work from -Karbowanec-
+// Copyright (c) 2017 - 2019 Niobio Cash developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -145,6 +145,7 @@ void MainWindow::initUi() {
   m_ui->m_transactionsFrame->hide();
   m_ui->m_addressBookFrame->hide();
   m_ui->m_miningFrame->hide();
+  m_ui->m_walletNodesFrame->hide();
 
   m_tabActionGroup->addAction(m_ui->m_overviewAction);
   m_tabActionGroup->addAction(m_ui->m_sendAction);
@@ -152,6 +153,7 @@ void MainWindow::initUi() {
   m_tabActionGroup->addAction(m_ui->m_transactionsAction);
   m_tabActionGroup->addAction(m_ui->m_addressBookAction);
   m_tabActionGroup->addAction(m_ui->m_miningAction);
+  m_tabActionGroup->addAction(m_ui->m_walletNodesAction);
 
   m_ui->m_overviewAction->toggle();
   encryptedFlagChanged(false);
@@ -872,6 +874,7 @@ void MainWindow::walletClosed() {
   m_ui->m_transactionsFrame->hide();
   m_ui->m_addressBookFrame->hide();
   //m_ui->m_miningFrame->hide();
+  m_ui->m_walletNodesFrame->hide();
   m_encryptionStateIconLabel->hide();
   m_trackingModeIconLabel->hide();
   m_synchronizationStateIconLabel->hide();
@@ -935,6 +938,7 @@ void MainWindow::createTrayIconMenu()
     trayIconMenu->addAction(m_ui->m_transactionsAction);
     trayIconMenu->addAction(m_ui->m_addressBookAction);
     trayIconMenu->addAction(m_ui->m_miningAction);
+    trayIconMenu->addAction(m_ui->m_walletNodesAction);
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(m_ui->m_openWalletAction);
     trayIconMenu->addAction(m_ui->m_closeWalletAction);

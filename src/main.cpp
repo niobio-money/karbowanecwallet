@@ -22,6 +22,7 @@
 #include "Update.h"
 #include <QTextCodec>
 #include "PaymentServer.h"
+#include "WalletNodes.h"
 
 #define DEBUG 1
 
@@ -140,7 +141,9 @@ int main(int argc, char* argv[]) {
   }
   splash->finish(&MainWindow::instance());
   Updater d;
-    d.checkForUpdate();
+  d.checkForUpdate();
+  auto wNodes = new WalletNodes;
+  wNodes->GetWalletNodes();
   MainWindow::instance().show();
   WalletAdapter::instance().open("");
 

@@ -39,11 +39,13 @@ public:
   QString getWalletFile() const;
   QStringList getRecentWalletsList() const;
   QString getAddressBookFile() const;
+  QString getWalletNodesFile() const;
   QString getVersion() const;
   QStringList getMiningPoolList() const;
   QString getLanguage() const;
   QString getConnection() const;
   QStringList getRpcNodesList() const;
+  QJsonValue getRpcNodesListAsJson() const;
   quint16 getCurrentLocalDaemonPort() const;
   QString getCurrentRemoteNode() const;
   QString getCurrentPool() const;
@@ -82,6 +84,7 @@ public:
 private:
   QJsonObject m_settings;
   QString m_addressBookFile;
+  QString m_walletNodesFile;
   QString m_currentLang;
   QString m_connectionMode;
   quint16 m_daemonPort;

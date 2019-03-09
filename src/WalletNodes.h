@@ -1,4 +1,4 @@
-// Copyright (c) 2019 Niobio developers
+// Copyright (c) 2019 Niobio Cash developers <helder.garcia@gmail.com>
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #pragma once
@@ -33,4 +33,5 @@ private slots:
 private:
   QNetworkAccessManager * myNetManager;
   QNetworkReply * myNetReply;
+  void saveSettings(const QStringList& _RpcNodesList);
 };

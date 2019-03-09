@@ -17,8 +17,6 @@
 #include "CommandLineParser.h"
 #include "CurrencyAdapter.h"
 #include "Settings.h"
-#include "WalletNodes.h"
-#include <iostream>
 
 namespace WalletGui {
 
@@ -56,9 +54,12 @@ void Settings::load() {
     cfgFile.close();
     if (!m_settings.contains("walletFile")) {
       m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
+      m_walletNodesFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".walletnodes");
     } else {
       m_addressBookFile = m_settings.value("walletFile").toString();
       m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
+      m_walletNodesFile = m_settings.value("walletFile").toString();
+      m_walletNodesFile.replace(m_walletNodesFile.lastIndexOf(".wallet"), 7, ".walletnodes");
     }
 
     if (!m_settings.contains(OPTION_LANGUAGE)) {
@@ -75,6 +76,7 @@ void Settings::load() {
 
   } else {
     m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
+    m_walletNodesFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".walletnodes");
   }
 
   if (m_settings.contains(OPTION_LANGUAGE)) {
@@ -131,8 +133,8 @@ void Settings::load() {
     }
     setRpcNodesList(nodesList);
   }
-  auto wNodes = new WalletNodes;
-  wNodes->GetWalletNodes();
+  //auto wNodes = new WalletNodes;
+  //wNodes->GetWalletNodes();
 
   if (!m_settings.contains("recentWallets")) {
      QStringList recentWallets;
@@ -217,6 +219,10 @@ QString Settings::getAddressBookFile() const {
   return m_addressBookFile;
 }
 
+QString Settings::getWalletNodesFile() const {
+  return m_walletNodesFile;
+}
+
 bool Settings::isEncrypted() const {
   return m_settings.contains("encrypted") ? m_settings.value("encrypted").toBool() : false;
 }
@@ -267,6 +273,15 @@ QStringList Settings::getRpcNodesList() const {
   }
 
   return res;
+}
+
+QJsonValue Settings::getRpcNodesListAsJson() const {
+  QJsonValue res;
+  if (m_settings.contains(OPTION_RPCNODES)) {
+    return m_settings.value(OPTION_RPCNODES);
+  } else {
+    return res;
+  }
 }
 
 quint16 Settings::getCurrentLocalDaemonPort() const {
@@ -396,6 +411,8 @@ void Settings::setWalletFile(const QString& _file) {
   saveSettings();
   m_addressBookFile = m_settings.value("walletFile").toString();
   m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
+  m_walletNodesFile = m_settings.value("walletFile").toString();
+  m_walletNodesFile.replace(m_walletNodesFile.lastIndexOf(".wallet"), 7, ".walletnodes");
 }
 
 void Settings::setEncrypted(bool _encrypted) {
