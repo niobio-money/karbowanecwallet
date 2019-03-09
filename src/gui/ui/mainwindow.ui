@@ -190,6 +190,22 @@
       </property>
      </widget>
     </item>
+    <item row="1" column="6">
+     <widget class="WalletGui::WalletNodesFrame" name="m_walletNodesFrame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -321,6 +337,7 @@
    <addaction name="m_transactionsAction"/>
    <addaction name="m_addressBookAction"/>
    <addaction name="m_miningAction"/>
+   <addaction name="m_walletNodesAction"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="accountToolBar">
@@ -418,6 +435,21 @@
    </property>
    <property name="text">
     <string>Contacts</string>
+   </property>
+  </action>
+  <action name="m_walletNodesAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../resources.qrc">
+     <normaloff>:/icons/wallet-nodes</normaloff>:/icons/wallet-nodes</iconset>
+   </property>
+   <property name="text">
+    <string>Wallet Nodes</string>
    </property>
   </action>
   <action name="m_createWalletAction">
@@ -651,6 +683,12 @@
    <class>WalletGui::MiningFrame</class>
    <extends>QFrame</extends>
    <header>gui/MiningFrame.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>WalletGui::WalletNodesFrame</class>
+   <extends>QFrame</extends>
+   <header>gui/WalletNodesFrame.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -965,6 +1003,22 @@
     <hint type="destinationlabel">
      <x>112</x>
      <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_walletNodesAction</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>m_walletNodesFrame</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>809</x>
+     <y>320</y>
     </hint>
    </hints>
   </connection>

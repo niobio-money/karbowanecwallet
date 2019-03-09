@@ -6,6 +6,7 @@
 #include "NodeModel.h"
 #include "Settings.h"
 #include "QUrl"
+#include <iostream>
 
 namespace WalletGui {
 
