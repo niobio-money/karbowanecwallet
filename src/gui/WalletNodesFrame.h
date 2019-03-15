@@ -31,6 +31,7 @@ private:
   AddressProvider* m_addressProvider;
   float remote_node_fee_percent;
   void onAddressFound(const QJsonObject& _remoteNodeData);
+  void walletInitCompleted(int _error, const QString& _error_text);
 };
 
 }

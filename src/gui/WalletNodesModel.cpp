@@ -10,193 +10,146 @@
 #include "WalletNodesModel.h"
 #include "Settings.h"
 #include "WalletNodes.h"
-#include <iostream>
 
 namespace WalletGui {
 
-WalletNodesModel& WalletNodesModel::instance() {
-  static WalletNodesModel inst;
-  return inst;
-}
-
-WalletNodesModel::WalletNodesModel() : QAbstractTableModel() {
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletInitCompletedSignal, this, &WalletNodesModel::walletInitCompleted, Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &WalletNodesModel::reset, Qt::QueuedConnection);
-}
-
-WalletNodesModel::~WalletNodesModel() {
-}
-
-int WalletNodesModel::columnCount(const QModelIndex& _parent) const {
-  return 2;
-}
-
-QVariant WalletNodesModel::data(const QModelIndex& _index, int _role) const {
-  if (!_index.isValid()) {
-    return QVariant();
+  WalletNodesModel& WalletNodesModel::instance() {
+    static WalletNodesModel inst;
+    return inst;
   }
 
-  QJsonObject wallenode = m_walletNodes.at(_index.row()).toObject();
+  WalletNodesModel::WalletNodesModel() : QAbstractTableModel() {
+    connect(&WalletAdapter::instance(), &WalletAdapter::walletInitCompletedSignal, this, &WalletNodesModel::walletInitCompleted, Qt::QueuedConnection);
+    connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &WalletNodesModel::reset, Qt::QueuedConnection);
+  }
 
-  switch (_role) {
-  case Qt::DisplayRole:
-    switch (_index.column()) {
-    case COLUMN_URL:
-      return _index.data(ROLE_URL);
-    case COLUMN_FEE:
-      return _index.data(ROLE_FEE);
-    default:
+  WalletNodesModel::~WalletNodesModel() {
+  }
+
+  int WalletNodesModel::columnCount(const QModelIndex& _parent) const {
+    return 2;
+  }
+
+  QVariant WalletNodesModel::data(const QModelIndex& _index, int _role) const {
+    if (!_index.isValid()) {
       return QVariant();
     }
 
-  case ROLE_URL:
-    return wallenode.value("url");
-  case ROLE_FEE:
-    return wallenode.value("fee");
-  default:
+    QJsonObject walletNode = m_walletNodes.at(_index.row()).toObject();
+
+    switch (_role) {
+      case Qt::DisplayRole:
+      switch (_index.column()) {
+        case COLUMN_URL:
+        return _index.data(ROLE_URL);
+        case COLUMN_FEE:
+        return _index.data(ROLE_FEE);
+        default:
+        return QVariant();
+      }
+
+      case ROLE_URL:
+      return walletNode.value("url");
+      case ROLE_FEE:
+      if(walletNode.value("fee") != 999) {
+        return walletNode.value("fee");
+      } else {
+        return QString("Loading...");
+      }
+      default:
+      return QVariant();
+    }
     return QVariant();
   }
 
-  return QVariant();
-  /*
-  if (_role == Qt::DisplayRole) {
-    if (_index.column() == 0) {
-      return m_walletNodes.at(_index.row()).toString();
-    } else if (_index.column() == 1) {
-      return m_walletNodesFees.at(_index.row()).toDouble();
-    } else if (_index.column() > 1) {
-      return QString("-");
-    }
+  Qt::ItemFlags WalletNodesModel::flags(const QModelIndex& _index) const {
+    return (Qt::ItemIsEnabled | Qt::ItemNeverHasChildren | Qt::ItemIsSelectable);
   }
-  return QVariant();
-  */
-}
 
-Qt::ItemFlags WalletNodesModel::flags(const QModelIndex& _index) const {
-  return (Qt::ItemIsEnabled | Qt::ItemNeverHasChildren | Qt::ItemIsSelectable);
-}
+  QVariant WalletNodesModel::headerData(int _section, Qt::Orientation _orientation, int _role) const {
+    if (_orientation != Qt::Horizontal || _role != Qt::DisplayRole) {
+      return QVariant();
+    }
 
-QVariant WalletNodesModel::headerData(int _section, Qt::Orientation _orientation, int _role) const {
-  if (_orientation != Qt::Horizontal || _role != Qt::DisplayRole) {
+    switch (_section) {
+      case COLUMN_URL:
+      return tr("URL");
+      case COLUMN_FEE:
+      return tr("Fee (%)");
+    }
+
     return QVariant();
   }
 
-  switch (_section) {
-  case COLUMN_URL:
-    return tr("URL");
-  case COLUMN_FEE:
-    return tr("Fee (%)");
+  int WalletNodesModel::rowCount(const QModelIndex& _parent) const {
+    return m_walletNodes.size();
   }
 
-  return QVariant();
-  /*
-  if (_role == Qt::DisplayRole && _orientation == Qt::Horizontal) {
-      switch (_section) {
-      case 0:
-          return QString("URL");
-      case 1:
-          return QString("Fee (%)");
-      }
-  }
-  return QVariant();
-  */
-}
-
-QModelIndex WalletNodesModel::index(int _row, int _column, const QModelIndex& _parent) const {
-  if (_parent.isValid()) {
-    return QModelIndex();
+  void WalletNodesModel::addWalletNode(const QString& _url, const float& _fee) {
+    beginInsertRows(QModelIndex(), m_walletNodes.size(), m_walletNodes.size());
+    QJsonObject newWalletNode;
+    newWalletNode.insert("url", _url);
+    newWalletNode.insert("fee", _fee);
+    m_walletNodes.append(newWalletNode);
+    endInsertRows();
+    saveWalletNodes();
   }
 
-  return createIndex(_row, _column, _row);
-}
+  void WalletNodesModel::removeWalletNode(quint32 _row) {
+    if (_row > m_walletNodes.size() - 1) {
+      return;
+    }
 
-QModelIndex WalletNodesModel::parent(const QModelIndex& _index) const {
-  return QModelIndex();
-}
-
-int WalletNodesModel::rowCount(const QModelIndex& _parent) const {
-  return m_walletNodes.size();
-}
-
-void WalletNodesModel::addWalletNode(const QString& _url, const QString& _fee) {
-  beginInsertRows(QModelIndex(), m_walletNodes.size(), m_walletNodes.size());
-  QJsonObject newWalletNode;
-  newWalletNode.insert("url", _url);
-  newWalletNode.insert("fee", _fee);
-  m_walletNodes.append(newWalletNode);
-  endInsertRows();
-  saveWalletNodes();
-}
-
-void WalletNodesModel::removeWalletNode(quint32 _row) {
-  if (_row > m_walletNodes.size() - 1) {
-    return;
+    beginRemoveRows(QModelIndex(), _row, _row);
+    m_walletNodes.removeAt(_row);
+    endRemoveRows();
+    saveWalletNodes();
   }
 
-  beginRemoveRows(QModelIndex(), _row, _row);
-  m_walletNodes.removeAt(_row);
-  endRemoveRows();
-  saveWalletNodes();
-}
+  void WalletNodesModel::reset() {
+    beginResetModel();
+    while (!m_walletNodes.empty()) {
+      m_walletNodes.removeFirst();
+    }
 
-void WalletNodesModel::reset() {
-  beginResetModel();
-  while (!m_walletNodes.empty()) {
-    m_walletNodes.removeFirst();
+    endResetModel();
   }
 
-  endResetModel();
-}
-
-void WalletNodesModel::saveWalletNodes() {
-  /*
-  QFile addressBookFile(Settings::instance().getAddressBookFile());
-  if (addressBookFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
-    QByteArray file_content = QJsonDocument(m_walletNodes).toJson(QJsonDocument::Compact);
-    addressBookFile.write(file_content);
-    addressBookFile.close();
+  void WalletNodesModel::saveWalletNodes() {
   }
-  */
-}
 
-void WalletNodesModel::walletInitCompleted(int _error, const QString& _error_text) {
-  if (!_error) {
-    QFile walletNodesFile(Settings::instance().getWalletNodesFile());
-    if (walletNodesFile.open(QIODevice::ReadOnly)) {
-      //QByteArray file_content = walletNodesFile.readAll();
-      //QJsonDocument doc = QJsonDocument::fromJson(file_content);
-      QJsonObject obj = QJsonDocument::fromJson(walletNodesFile.readAll()).object();
-      if (obj.contains("remoteNodes")) {
-      //if (!doc.isNull()) {
-        m_walletNodes = obj.value("remoteNodes").toArray();
-      }
-
-      walletNodesFile.close();
-      if (!m_walletNodes.isEmpty()) {
-        beginInsertRows(QModelIndex(), 0, m_walletNodes.size() - 1);
-        endInsertRows();
+  void WalletNodesModel::walletInitCompleted(int _error, const QString& _error_text) {
+    if (!_error) {
+      QFile walletNodesFile(Settings::instance().getWalletNodesFile());
+      if (walletNodesFile.open(QIODevice::ReadOnly)) {
+        QJsonObject obj = QJsonDocument::fromJson(walletNodesFile.readAll()).object();
+        if (obj.contains("remoteNodes")) {
+          m_walletNodes = obj.value("remoteNodes").toArray();
+        }
+        walletNodesFile.close();
+        if (!m_walletNodes.isEmpty()) {
+          beginInsertRows(QModelIndex(), 0, m_walletNodes.size() - 1);
+          endInsertRows();
+        }
       }
     }
-    /*
-    QJsonValue currentRpcNodesList = Settings::instance().getRpcNodesListAsJson();
-    m_walletNodes = currentRpcNodesList.toArray();
-    if (!m_walletNodes.isEmpty()) {
-      beginInsertRows(QModelIndex(), 0, m_walletNodes.size() - 1);
-      endInsertRows();
-    }
-    Q_FOREACH (const QJsonValue& node, m_walletNodes) {
-      m_walletNodesFees.append(QJsonValue(3.5));
-    }
-    */
   }
-}
 
-const QModelIndex WalletNodesModel::indexFromUrl(const QString& searchstring, const int& column){
-  QModelIndex index = match(WalletNodesModel::index(0,column,QModelIndex()),
-  Qt::DisplayRole, searchstring, 1,
-  Qt::MatchFlags(Qt::MatchExactly|Qt::MatchRecursive))
-  .value(0);
+  const QModelIndex WalletNodesModel::indexFromUrl(const QString& searchstring, const int& column) {
+    QModelIndex index = match(WalletNodesModel::index(0,column,QModelIndex()),
+    Qt::DisplayRole, searchstring, 1,
+    Qt::MatchFlags(Qt::MatchExactly|Qt::MatchRecursive))
+    .value(0);
+    return index;
+  }
 
-  return index;
-}
+  bool WalletNodesModel::setData(const QModelIndex& _index, const QVariant& _value, int _role) {
+    if(_index.isValid() && _role == Qt::EditRole) {
+      addWalletNode(m_walletNodes[_index.row()].toObject().value("url").toString(), _value.toFloat());
+      removeWalletNode(_index.row());
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

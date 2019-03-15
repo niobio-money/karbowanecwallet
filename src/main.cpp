@@ -144,6 +144,7 @@ int main(int argc, char* argv[]) {
   d.checkForUpdate();
   auto wNodes = new WalletNodes;
   wNodes->GetWalletNodes();
+
   MainWindow::instance().show();
   WalletAdapter::instance().open("");
 
