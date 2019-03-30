@@ -344,14 +344,14 @@
     </message>
     <message>
         <location filename="../gui/ui/connectionsettingsdialog.ui" line="251"/>
-        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends 0.25% fee from each transaction to the node, but no more than 1 NBR.</source>
+        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends a fee from each transaction to the node, but no more than 1 NBR.</source>
         <translation type="unfinished">ستتصل المحفظة بريمون بعيد يعمل على شبكة عالمية أو محلية. الرجاء
 تحديد الوحدة الأساسية أو حدد عنوان الأي بي أو اسم المجال والمنفذ. وفي هذا
 الوضع، ترسل المحفظة رسوماً بنسبة 0.25% كرسوم عل كل معاملة تتم في الوحدة
 الأساسية، ولكن لا تزيد عن أكثر من 1 NBR.</translation>
     </message>
     <message>
-        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends 0.25% fee from each transaction to the node, but no more than 10 NBR.</source>
+        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends a fee from each transaction to the node, but no more than 10 NBR.</source>
         <translation>ستتصل المحفظة بريمون بعيد يعمل على شبكة عالمية أو محلية. الرجاء
 تحديد الوحدة الأساسية أو حدد عنوان الأي بي أو اسم المجال والمنفذ. وفي هذا
 الوضع، ترسل المحفظة رسوماً بنسبة 0.25% كرسوم عل كل معاملة تتم في الوحدة

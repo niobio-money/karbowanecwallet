@@ -279,15 +279,15 @@
         <translation>Añadir el nodo</translation>
     </message>
     <message>
-        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends 0.25% fee from each transaction to the node, but no more than 10 NBR.</source>
-        <translation type="vanished">El monedero se conectará al nodo remoto que se ejecuta en la red local o global. Por favor, seleccione nodo o especifique la dirección IP o el nombre de dominio y puerto. En este modo, el monedero envía una comisión del 0.25% de cada transacción al nodo, pero no más de 10 NBR.</translation>
+        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends a fee from each transaction to the node, but no more than 10 NBR.</source>
+        <translation type="vanished">El monedero se conectará al nodo remoto que se ejecuta en la red local o global. Por favor, seleccione nodo o especifique la dirección IP o el nombre de dominio y puerto. En este modo, el monedero envía una comisión de cada transacción al nodo, pero no más de 10 NBR.</translation>
     </message>
     <message>
         <source>Remove node</source>
         <translation>Eliminar nodo</translation>
     </message>
     <message>
-        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends 0.25% fee from each transaction to the node, but no more than 10 NBR.</source>
+        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends a fee from each transaction to the node, but no more than 10 NBR.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

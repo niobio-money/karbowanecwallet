@@ -342,8 +342,8 @@
     </message>
     <message>
         <location filename="../gui/ui/connectionsettingsdialog.ui" line="251"/>
-        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends 0.25% fee from each transaction to the node, but no more than 1 NBR.</source>
-        <translation>钱包将连接到在本地或全球网络中运行的远程节点。请选择节点，或者指定IP地址或域名和端口。在这种模式下，钱包将从每笔交易中向节点发送0.25％的费用，但最多不超过1 NBR。</translation>
+        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends a fee from each transaction to the node, but no more than 1 NBR.</source>
+        <translation>钱包将连接到在本地或全球网络中运行的远程节点。请选择节点，或者指定IP地址或域名和端口。在这种模式下，钱包将从每笔交易中向节点发送 的费用，但最多不超过1 NBR。</translation>
     </message>
 </context>
 <context>

@@ -342,8 +342,8 @@
     </message>
     <message>
         <location filename="../gui/ui/connectionsettingsdialog.ui" line="251"/>
-        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends 0.25% fee from each transaction to the node, but no more than 1 NBR.</source>
-        <translation>지갑은 로컬 또는 글로벌 네트워크에서 실행 중인 원격 노드에 연결합니다. 노드를 선택하거나 IP 주소 또는 도메인 이름과 포트를 지정하세요. 이 모드에서 지갑은 각 거래에서 0.25% 수수료를 노드로 보냅니다. 그러나 이는 1 NBR를 초과하지 않습니다.</translation>
+        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends a fee from each transaction to the node, but no more than 1 NBR.</source>
+        <translation>지갑은 로컬 또는 글로벌 네트워크에서 실행 중인 원격 노드에 연결합니다. 노드를 선택하거나 IP 주소 또는 도메인 이름과 포트를 지정하세요. 이 모드에서 지갑은 각 거래에서 수수료를 노드로 보냅니다. 그러나 이는 1 NBR를 초과하지 않습니다.</translation>
     </message>
 </context>
 <context>

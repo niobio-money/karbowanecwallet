@@ -342,8 +342,8 @@
     </message>
     <message>
         <location filename="../gui/ui/connectionsettingsdialog.ui" line="251"/>
-        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends 0.25% fee from each transaction to the node, but no more than 1 NBR.</source>
-        <translation>वॉलेट स्थानीय या वैश्विक नेटवर्क में चल रहे रिमोट नोड से कनेक्ट होगा। कृपया नोड का चयन करें या IP एड्रेस या डोमेन नाम और पोर्ट निर्दिष्ट करें। इस मोड में वॉलेट प्रत्येक लेनदेन से नोड को 0.25% शुल्क भेजता है, लेकिन 1 NBR से अधिक नहीं।</translation>
+        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends a fee from each transaction to the node, but no more than 1 NBR.</source>
+        <translation>वॉलेट स्थानीय या वैश्विक नेटवर्क में चल रहे रिमोट नोड से कनेक्ट होगा। कृपया नोड का चयन करें या IP एड्रेस या डोमेन नाम और पोर्ट निर्दिष्ट करें। इस मोड में वॉलेट प्रत्येक लेनदेन से नोड को % शुल्क भेजता है, लेकिन 1 NBR से अधिक नहीं।</translation>
     </message>
 </context>
 <context>

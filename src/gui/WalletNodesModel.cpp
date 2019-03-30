@@ -54,7 +54,7 @@ namespace WalletGui {
       if(walletNode.value("fee") != 999) {
         return walletNode.value("fee");
       } else {
-        return QString("Loading...");
+        return tr("Loading...");
       }
       default:
       return QVariant();

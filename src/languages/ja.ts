@@ -318,8 +318,8 @@
     </message>
     <message>
         <location filename="../gui/ui/connectionsettingsdialog.ui" line="251"/>
-        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends 0.25% fee from each transaction to the node, but no more than 1 NBR.</source>
-        <translation>ウォレットは、ローカルまたはグローバルネットワークで実行されているリモートノードに接続されます。ノードを選択するか、IPアドレス、ドメイン名、ポートを指定してください。このモードでは、ウォレットはトランザクション毎に0.25%の手数料をそのノードに送付しますが、最大でも1NBRです。</translation>
+        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends a fee from each transaction to the node, but no more than 1 NBR.</source>
+        <translation>ウォレットは、ローカルまたはグローバルネットワークで実行されているリモートノードに接続されます。ノードを選択するか、IPアドレス、ドメイン名、ポートを指定してください。このモードでは、ウォレットはトランザクション毎に の手数料をそのノードに送付しますが、最大でも1NBRです。</translation>
     </message>
 </context>
 <context>

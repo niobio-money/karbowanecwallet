@@ -30,15 +30,25 @@ namespace WalletGui {
     m_ui->m_walletNodesView->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
     m_ui->m_walletNodesView->setSortingEnabled(true);
     m_ui->m_walletNodesView->sortByColumn(1, Qt::AscendingOrder);
+    m_ui->m_walletNodesView->setSelectionMode(QAbstractItemView::SingleSelection);
 
     connect(&WalletAdapter::instance(), &WalletAdapter::walletInitCompletedSignal, this, &WalletNodesFrame::walletInitCompleted, Qt::QueuedConnection);
-
   }
 
   WalletNodesFrame::~WalletNodesFrame() {
   }
 
+  void WalletNodesFrame::setClicked() {
+    QModelIndexList selection = m_ui->m_walletNodesView->selectionModel()->selectedRows();
+    QModelIndex index = selection.at(0);
+    QString url = index.sibling(index.row(),index.column()).data().toString();
+    Settings::instance().setCurrentRemoteNode(url);
+    Settings::instance().setConnection("remote");
+    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Change will take effect after restarting the wallet."), QtInfoMsg));
+  }
+
   void WalletNodesFrame::onAddressFound(const QJsonObject& _remoteNodeData) {
+    QString currentWalletNode = Settings::instance().getCurrentRemoteNode();
     QString url = _remoteNodeData.value("url").toString();
     QString address = _remoteNodeData.value("fee_address").toString();
     if (!address.isEmpty()) {
@@ -57,6 +67,9 @@ namespace WalletGui {
       QModelIndex matchingIndex = proxy.mapToSource(proxy.index(0,0));
       if(matchingIndex.isValid()) {
         modl->setData(matchingIndex, feePercent);
+        if(url == currentWalletNode) {
+          m_ui->m_walletNodesView->selectionModel()->setCurrentIndex(matchingIndex, QItemSelectionModel::Select | QItemSelectionModel::Rows);
+        }
       }
     }
   }

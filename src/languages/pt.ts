@@ -289,8 +289,8 @@
         <translation>Adicionar node</translation>
     </message>
     <message>
-        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends 0.25% fee from each transaction to the node, but no more than 10 NBR.</source>
-        <translation>A carteira se conectará a um node remoto que esteja sendo executado em uma rede local ou global. Selecione o node ou especifique o endereço IP ou o domínio e a porta do novo node. Neste modo, você paga a taxa pelo node na quantidade de 0,25% do valor da transferência, mas não mais que 10 NBR.</translation>
+        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends a fee from each transaction to the node, but no more than 10 NBR.</source>
+        <translation>A carteira se conectará a um node remoto que esteja sendo executado em uma rede local ou global. Selecione o node ou especifique o endereço IP ou o domínio e a porta do novo node. Neste modo, você paga uma taxa percentual para o node, mas não mais que 10 NBR.</translation>
     </message>
     <message>
         <source>Remove node</source>
@@ -949,6 +949,10 @@ Do you want to go to download page?</source>
         <translation>Há uma nova versão disponível.
 Você quer ir à página de dowload?</translation>
     </message>
+    <message>
+      <source>Wallet node %1 is not responding. Please select another one on Wallet Nodes Frame, or select AUTO on Settings->Connection page to use a local blockchain.</source>
+      <translation>O nó de carteira %1 não está respondendo. Por favor, selecione outro no painel de Wallet Nodes, ou configure o modo de conexão AUTO para usar uma blockchain local.</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveFrame</name>
@@ -962,7 +966,7 @@ Você quer ir à página de dowload?</translation>
     </message>
     <message>
         <source>Save QR to file</source>
-        <translation>Savar para arquivo QR</translation>
+        <translation>Salvar para arquivo QR</translation>
     </message>
     <message>
         <source>Request payment</source>
@@ -1588,7 +1592,7 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Connection mode will be changed after restarting the wallet.</source>
-        <translation>O modo de conexão atribuído será ativado após o reinício da carteira.</translation>
+        <translation>O modo de conexão atribuído será ativado após a carteira ser reiniciada.</translation>
     </message>
     <message>
         <source>Account toolbar</source>
@@ -2179,6 +2183,35 @@ Você tem certeza?</translation>
     <message>
         <source>There must be an error in mnemonic seed. Make sure you entered it correctly.</source>
         <translation>Há uma falha na frase mnemônica. Verifique se você digitou corretamente.</translation>
+    </message>
+</context>
+<context>
+    <name>WalletNodesFrame</name>
+    <message>
+        <source>Use Selected Wallet Node</source>
+        <translation>Usar o Nó de Carteira Selecionado</translation>
+    </message>
+</context>
+<context>
+  <name>WalletGui::WalletNodesFrame</name>
+  <message>
+      <source>Change will take effect after restarting the wallet.</source>
+      <translation>Alteração terá efeito após a carteira ser reiniciada.</translation>
+  </message>
+</context>
+<context>
+    <name>WalletGui::WalletNodesModel</name>
+    <message>
+        <source>URL</source>
+        <translation>Endereço Internet</translation>
+    </message>
+    <message>
+        <source>Fee (%)</source>
+        <translation>Taxa (%)</translation>
+    </message>
+    <message>
+        <source>Loading...</source>
+        <translation>Conectando...</translation>
     </message>
 </context>
 </TS>

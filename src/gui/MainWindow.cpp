@@ -771,6 +771,9 @@ void MainWindow::showMessage(const QString& _text, QtMsgType _type) {
   case QtDebugMsg:
     QMessageBox::information(this, tr("Wallet"), _text);
     break;
+  case QtInfoMsg:
+      QMessageBox::information(this, tr("Wallet"), _text);
+      break;
   default:
     break;
   }

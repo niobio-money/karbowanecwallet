@@ -26,6 +26,7 @@ AddressBookModel::~AddressBookModel() {
 }
 
 int AddressBookModel::columnCount(const QModelIndex& _parent) const {
+  Q_UNUSED(_parent);
   return 3;
 }
 
@@ -37,26 +38,26 @@ QVariant AddressBookModel::data(const QModelIndex& _index, int _role) const {
   QJsonObject address = m_addressBook.at(_index.row()).toObject();
 
   switch (_role) {
-  case Qt::DisplayRole:
-    switch (_index.column()) {
-    case COLUMN_LABEL:
-      return _index.data(ROLE_LABEL);
-    case COLUMN_ADDRESS:
-      return _index.data(ROLE_ADDRESS);
-    case COLUMN_PAYMENTID:
-      return _index.data(ROLE_PAYMENTID);
+    case Qt::EditRole:
+    case Qt::DisplayRole:
+      switch (_index.column()) {
+        case COLUMN_LABEL:
+          return _index.data(ROLE_LABEL);
+        case COLUMN_ADDRESS:
+          return _index.data(ROLE_ADDRESS);
+        case COLUMN_PAYMENTID:
+          return _index.data(ROLE_PAYMENTID);
+        default:
+          return QVariant();
+      }
+    case ROLE_LABEL:
+      return address.value("label");
+    case ROLE_ADDRESS:
+      return address.value("address");
+    case ROLE_PAYMENTID:
+      return address.value("paymentid");
     default:
       return QVariant();
-    }
-
-  case ROLE_LABEL:
-    return address.value("label");
-  case ROLE_ADDRESS:
-    return address.value("address");
-  case ROLE_PAYMENTID:
-    return address.value("paymentid");
-  default:
-    return QVariant();
   }
 
   return QVariant();
@@ -96,6 +97,7 @@ QModelIndex AddressBookModel::parent(const QModelIndex& _index) const {
 }
 
 int AddressBookModel::rowCount(const QModelIndex& _parent) const {
+  Q_UNUSED(_parent);
   return m_addressBook.size();
 }
 
