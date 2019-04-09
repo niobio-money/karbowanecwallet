@@ -66,10 +66,6 @@ void Settings::load() {
          m_currentLang = "pt";
     }
 
-    if (!m_settings.contains(OPTION_CONNECTION)) {
-         m_connectionMode = "remote";
-    }
-
     if (!m_settings.contains(OPTION_DAEMON_PORT)) {
          m_daemonPort = CryptoNote::RPC_DEFAULT_PORT;
     }
@@ -85,6 +81,13 @@ void Settings::load() {
 
   if (m_settings.contains(OPTION_CONNECTION)) {
         m_connectionMode = m_settings.value(OPTION_CONNECTION).toString();
+  } else {
+    m_settings.insert(OPTION_CONNECTION, "remote");
+    m_connectionMode = "remote";
+  }
+
+  if (!m_settings.contains(OPTION_REMOTE_NODE)) {
+    m_settings.insert(OPTION_REMOTE_NODE, "remote-nbr-hydra.niobioco.in:8314");
   }
 
   if (!m_settings.contains(OPTION_DAEMON_PORT)) {
@@ -258,10 +261,10 @@ QString Settings::getLanguage() const {
 QString Settings::getConnection() const {
     QString connection;
     if (m_settings.contains(OPTION_CONNECTION)) {
-        connection = m_settings.value(OPTION_CONNECTION).toString();
+      connection = m_settings.value(OPTION_CONNECTION).toString();
     }
     else {
-    connection = "remote"; // default
+      connection = "remote"; // default
     }
     return connection;
 }
@@ -519,7 +522,7 @@ void Settings::setCurrentLocalDaemonPort(const quint16& _daemonPort) {
 
 void Settings::setCurrentRemoteNode(const QString& _remoteNode) {
     if (!_remoteNode.isEmpty()) {
-    m_settings.insert(OPTION_REMOTE_NODE, _remoteNode);
+      m_settings.insert(OPTION_REMOTE_NODE, _remoteNode);
     }
     saveSettings();
 }

@@ -116,6 +116,8 @@ int main(int argc, char* argv[]) {
     QMessageBox::warning(nullptr, QObject::tr("Fail"), QObject::tr("%1 wallet already running or I cannot create lock file %2. Check your permissions.").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getDataDir().absoluteFilePath(QApplication::applicationName() + ".lock")));
     return 0;
   }
+  auto wNodes = new WalletNodes;
+  wNodes->GetWalletNodes();
 
   SignalHandler::instance().init();
   QObject::connect(&SignalHandler::instance(), &SignalHandler::quitSignal, &app, &QApplication::quit);
@@ -143,8 +145,6 @@ int main(int argc, char* argv[]) {
   }
   Updater d;
   d.checkForUpdate();
-  auto wNodes = new WalletNodes;
-  wNodes->GetWalletNodes();
 
   MainWindow::instance().show();
   WalletAdapter::instance().open("");
