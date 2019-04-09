@@ -8,7 +8,7 @@
 #include <QJsonArray>
 
 namespace WalletGui {
-  
+
 class AddressBookModel : public QAbstractItemModel
 {
   Q_OBJECT
