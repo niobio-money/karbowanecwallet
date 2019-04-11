@@ -25,8 +25,8 @@ public:
   Qt::ItemFlags flags(const QModelIndex& _index) const Q_DECL_OVERRIDE;
   QVariant headerData(int _section, Qt::Orientation _orientation, int _role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
   int rowCount(const QModelIndex& _parent = QModelIndex()) const Q_DECL_OVERRIDE;
-  void addWalletNode(const QString& _url, const float& _fee);
-  void removeWalletNode(quint32 _row);
+  void addWalletNode(const QString& _url, const QString& _fee);
+  void removeWalletNode(qint32 _row);
   const QModelIndex indexFromUrl(const QString& searchstring, const int& column);
 
 private:

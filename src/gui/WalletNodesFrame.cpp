@@ -52,12 +52,13 @@ namespace WalletGui {
     QString url = _remoteNodeData.value("url").toString();
     QString address = _remoteNodeData.value("fee_address").toString();
     if (!address.isEmpty()) {
-      float feePercent = 0.25;
+      QString feePercent = "0.25";
       if(_remoteNodeData.contains("fee_percent")) {
-        feePercent = _remoteNodeData.value("fee_percent").toDouble();
-        if (feePercent < 0 || feePercent > 5) { // prevent abuse
-          feePercent = 0.25;
+        float remoteFeePercent = _remoteNodeData.value("fee_percent").toDouble();
+        if (remoteFeePercent < 0 || remoteFeePercent > 5) { // prevent abuse
+          remoteFeePercent = 0.25;
         }
+        feePercent = QString::number(remoteFeePercent);
       }
       QAbstractItemModel *modl = m_ui->m_walletNodesView->model();
       QSortFilterProxyModel proxy;

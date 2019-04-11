@@ -51,11 +51,7 @@ namespace WalletGui {
       case ROLE_URL:
       return walletNode.value("url");
       case ROLE_FEE:
-      if(walletNode.value("fee") != 999) {
-        return walletNode.value("fee");
-      } else {
-        return tr("Loading...");
-      }
+      return walletNode.value("fee");
       default:
       return QVariant();
     }
@@ -85,7 +81,7 @@ namespace WalletGui {
     return m_walletNodes.size();
   }
 
-  void WalletNodesModel::addWalletNode(const QString& _url, const float& _fee) {
+  void WalletNodesModel::addWalletNode(const QString& _url, const QString& _fee) {
     beginInsertRows(QModelIndex(), m_walletNodes.size(), m_walletNodes.size());
     QJsonObject newWalletNode;
     newWalletNode.insert("url", _url);
@@ -95,7 +91,7 @@ namespace WalletGui {
     saveWalletNodes();
   }
 
-  void WalletNodesModel::removeWalletNode(quint32 _row) {
+  void WalletNodesModel::removeWalletNode(qint32 _row) {
     if (_row > m_walletNodes.size() - 1) {
       return;
     }
@@ -145,7 +141,7 @@ namespace WalletGui {
 
   bool WalletNodesModel::setData(const QModelIndex& _index, const QVariant& _value, int _role) {
     if(_index.isValid() && _role == Qt::EditRole) {
-      addWalletNode(m_walletNodes[_index.row()].toObject().value("url").toString(), _value.toFloat());
+      addWalletNode(m_walletNodes[_index.row()].toObject().value("url").toString(), _value.toString());
       removeWalletNode(_index.row());
       return true;
     } else {

@@ -66,7 +66,7 @@ void WalletNodes::saveSettings(const QStringList &_RpcNodesList) {
   for(auto item : _RpcNodesList) {
     QJsonObject item_data;
     item_data.insert(url_str, QJsonValue(item));
-    item_data.insert(fee_str, QJsonValue(999));
+    item_data.insert(fee_str, QJsonValue("Loading"));
     wn_array.push_back(QJsonValue(item_data));
   }
   QJsonObject final_object;
