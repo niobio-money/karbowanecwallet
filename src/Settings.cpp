@@ -87,7 +87,7 @@ void Settings::load() {
   }
 
   if (!m_settings.contains(OPTION_REMOTE_NODE)) {
-    m_settings.insert(OPTION_REMOTE_NODE, "remote-nbr-hydra.niobioco.in:8314");
+    m_settings.insert(OPTION_REMOTE_NODE, "node0001.niobiocash.nl:8314");
   }
 
   if (!m_settings.contains(OPTION_DAEMON_PORT)) {
@@ -124,7 +124,8 @@ void Settings::load() {
 
   QStringList defaultNodesList;
   defaultNodesList << "remote-nbr-hydra.niobioco.in:8314"
-  << "remote-nbr-002.niobioco.in:8314";
+  << "remote-nbr-002.niobioco.in:8314"
+  << "node0001.niobiocash.nl:8314";
   if (!m_settings.contains(OPTION_RPCNODES)) {
     setRpcNodesList(QStringList() << defaultNodesList);
   } else {
@@ -301,7 +302,7 @@ QString Settings::getCurrentRemoteNode() const {
     remotenode = m_settings.value(OPTION_REMOTE_NODE).toString();
   }
   else {
-    remotenode = "remote-nbr-hydra.niobioco.in:8314";
+    remotenode = "node0001.niobiocash.nl:8314";
   }
   return remotenode;
 }
