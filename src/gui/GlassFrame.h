@@ -1,6 +1,6 @@
 // Copyright (c) 2015-2017, The Bytecoin developers
 //
-// This file is part of Bytecoin.
+// This file is part of Niobio Cash.
 //
 // Karbovanets is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -13,7 +13,7 @@
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with Karbovanets.  If not, see <http://www.gnu.org/licenses/>.
+// along with Niobio Cash.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
