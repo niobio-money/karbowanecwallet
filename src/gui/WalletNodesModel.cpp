@@ -27,7 +27,7 @@ namespace WalletGui {
   }
 
   int WalletNodesModel::columnCount(const QModelIndex& _parent) const {
-    return 2;
+    return 4;
   }
 
   QVariant WalletNodesModel::data(const QModelIndex& _index, int _role) const {
@@ -44,6 +44,10 @@ namespace WalletGui {
         return _index.data(ROLE_URL);
         case COLUMN_FEE:
         return _index.data(ROLE_FEE);
+        case COLUMN_LATENCY:
+        return _index.data(ROLE_LATENCY);
+        case COLUMN_MESSAGE:
+        return _index.data(ROLE_MESSAGE);
         default:
         return QVariant();
       }
@@ -52,6 +56,10 @@ namespace WalletGui {
       return walletNode.value("url");
       case ROLE_FEE:
       return walletNode.value("fee");
+      case ROLE_LATENCY:
+      return walletNode.value("latency");
+      case ROLE_MESSAGE:
+      return walletNode.value("message");
       default:
       return QVariant();
     }
@@ -72,6 +80,10 @@ namespace WalletGui {
       return tr("URL");
       case COLUMN_FEE:
       return tr("Fee (%)");
+      case COLUMN_LATENCY:
+      return tr("Latency (ms)");
+      case COLUMN_MESSAGE:
+      return tr("Message");
     }
 
     return QVariant();
@@ -81,11 +93,15 @@ namespace WalletGui {
     return m_walletNodes.size();
   }
 
-  void WalletNodesModel::addWalletNode(const QString& _url, const QString& _fee) {
+  void WalletNodesModel::addWalletNode(const QModelIndex& _index, const QVariant& _value) {
+    QVector<QString> walletNodeData = _value.value<QVector<QString> >();
+
     beginInsertRows(QModelIndex(), m_walletNodes.size(), m_walletNodes.size());
     QJsonObject newWalletNode;
-    newWalletNode.insert("url", _url);
-    newWalletNode.insert("fee", _fee);
+    newWalletNode.insert("url", walletNodeData[0]);
+    newWalletNode.insert("fee", walletNodeData[1]);
+    newWalletNode.insert("latency", walletNodeData[2]);
+    newWalletNode.insert("message", walletNodeData[3]);
     m_walletNodes.append(newWalletNode);
     endInsertRows();
     saveWalletNodes();
@@ -141,7 +157,8 @@ namespace WalletGui {
 
   bool WalletNodesModel::setData(const QModelIndex& _index, const QVariant& _value, int _role) {
     if(_index.isValid() && _role == Qt::EditRole) {
-      addWalletNode(m_walletNodes[_index.row()].toObject().value("url").toString(), _value.toString());
+      if (_index.column() < 0 || _index.column() > 2) return false;
+      addWalletNode(_index, _value);
       removeWalletNode(_index.row());
       return true;
     } else {

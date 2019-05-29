@@ -63,10 +63,14 @@ void WalletNodes::saveSettings(const QStringList &_RpcNodesList) {
   QJsonArray wn_array;
   QString url_str("url");
   QString fee_str("fee");
+  QString latency_str("latency");
+  QString message_str("message");
   for(auto item : _RpcNodesList) {
     QJsonObject item_data;
     item_data.insert(url_str, QJsonValue(item));
     item_data.insert(fee_str, QJsonValue("Loading"));
+    item_data.insert(latency_str, QJsonValue("-"));
+    item_data.insert(message_str, QJsonValue("-"));
     wn_array.push_back(QJsonValue(item_data));
   }
   QJsonObject final_object;

@@ -51,8 +51,10 @@ namespace WalletGui {
     QString currentWalletNode = Settings::instance().getCurrentRemoteNode();
     QString url = _remoteNodeData.value("url").toString();
     QString address = _remoteNodeData.value("fee_address").toString();
-    if (!address.isEmpty()) {
+    if (!(address.isEmpty())) {
       QString feePercent = "0.25";
+      QString latency = "-";
+      QString message = "-";
       if(_remoteNodeData.contains("fee_percent")) {
         float remoteFeePercent = _remoteNodeData.value("fee_percent").toDouble();
         if (remoteFeePercent < 0 || remoteFeePercent > 5) { // prevent abuse
@@ -60,6 +62,18 @@ namespace WalletGui {
         }
         feePercent = QString::number(remoteFeePercent);
       }
+      if(_remoteNodeData.contains("latency")) {
+        latency = QString::number(_remoteNodeData.value("latency").toDouble());
+      }
+      if(_remoteNodeData.contains("wn_message")) {
+        message = _remoteNodeData.value("wn_message").toString();
+      }
+      QVector<QString> vector(0);
+      vector.append(url);
+      vector.append(feePercent);
+      vector.append(latency);
+      vector.append(message);
+      QVariant walletNodeData = QVariant::fromValue(vector);
       QAbstractItemModel *modl = m_ui->m_walletNodesView->model();
       QSortFilterProxyModel proxy;
       proxy.setSourceModel(modl);
@@ -67,7 +81,7 @@ namespace WalletGui {
       proxy.setFilterFixedString(url);
       QModelIndex matchingIndex = proxy.mapToSource(proxy.index(0,0));
       if(matchingIndex.isValid()) {
-        modl->setData(matchingIndex, feePercent);
+        modl->setData(matchingIndex, walletNodeData);
         if(url == currentWalletNode) {
           m_ui->m_walletNodesView->selectionModel()->setCurrentIndex(matchingIndex, QItemSelectionModel::Select | QItemSelectionModel::Rows);
         }
@@ -76,20 +90,23 @@ namespace WalletGui {
   }
 
   void WalletNodesFrame::walletInitCompleted(int _error, const QString& _error_text) {
-    QFile walletNodesFile(Settings::instance().getWalletNodesFile());
-    if (walletNodesFile.open(QIODevice::ReadOnly)) {
-      QJsonArray m_walletNodes;
-      QJsonObject obj = QJsonDocument::fromJson(walletNodesFile.readAll()).object();
-      if (obj.contains("remoteNodes")) {
-        m_walletNodes = obj.value("remoteNodes").toArray();
-      }
-      walletNodesFile.close();
-      if (!m_walletNodes.isEmpty()) {
-        QString remoteNodeUrl;
-        Q_FOREACH (const QJsonValue& node, m_walletNodes) {
-          remoteNodeUrl = node.toObject().value("url").toString() + "/feeaddress";
-          m_addressProvider->getAddress(remoteNodeUrl);
+    if (!_error) {
+      QFile walletNodesFile(Settings::instance().getWalletNodesFile());
+      if (walletNodesFile.open(QIODevice::ReadOnly)) {
+        QJsonArray m_walletNodes;
+        QJsonObject obj = QJsonDocument::fromJson(walletNodesFile.readAll()).object();
+        if (obj.contains("remoteNodes")) {
+          m_walletNodes = obj.value("remoteNodes").toArray();
+        }
+        walletNodesFile.close();
+        if (!m_walletNodes.isEmpty()) {
+          QString remoteNodeUrl;
+          Q_FOREACH (const QJsonValue& node, m_walletNodes) {
+            remoteNodeUrl = node.toObject().value("url").toString() + "/feeaddress";
+            m_addressProvider->getAddress(remoteNodeUrl);
+          }
           connect(m_addressProvider, &AddressProvider::addressFoundSignal, this, &WalletNodesFrame::onAddressFound, Qt::QueuedConnection);
+
         }
       }
     }

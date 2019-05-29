@@ -8,6 +8,7 @@
 #include <QFrame>
 #include <QMenu>
 #include <QStyledItemDelegate>
+Q_DECLARE_METATYPE(QVector<QString>)
 
 namespace Ui {
   class WalletNodesFrame;
@@ -25,15 +26,13 @@ namespace WalletGui {
     WalletNodesFrame(QWidget* _parent);
     ~WalletNodesFrame();
     QModelIndex index;
-    
+
     public Q_SLOTS:
     void setClicked();
   private:
     QScopedPointer<Ui::WalletNodesFrame> m_ui;
     AddressProvider* m_addressProvider;
-    float remote_node_fee_percent;
     void onAddressFound(const QJsonObject& _remoteNodeData);
     void walletInitCompleted(int _error, const QString& _error_text);
   };
-
 }
