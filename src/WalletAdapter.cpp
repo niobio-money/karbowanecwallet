@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2016 The Cryptonote developers
 // Copyright (c) 2015-2016 XDN developers
-// Copyright (c) 2016-2017 The Karbowanec developers
+// Copyright (c) 2016-2017 - 2019 Niobio Cash developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -100,7 +100,7 @@ void WalletAdapter::open(const QString& _password) {
   m_wallet = NodeAdapter::instance().createWallet();
   m_wallet->addObserver(this);
 
-  if (QFile::exists(Settings::instance().getWalletFile())) {  
+  if (QFile::exists(Settings::instance().getWalletFile())) {
     if (Settings::instance().getWalletFile().endsWith(".keys")) {
       if (!importLegacyWallet(_password)) {
         return;
@@ -135,7 +135,7 @@ void WalletAdapter::createWallet() {
     m_wallet->initAndGenerateDeterministic("");
 
     VerifyMnemonicSeedDialog dlg(nullptr);
-    if (!dlg.exec() == QDialog::Accepted) {
+    if (!(dlg.exec() == QDialog::Accepted)) {
       return;
     }
   } catch (std::system_error&) {

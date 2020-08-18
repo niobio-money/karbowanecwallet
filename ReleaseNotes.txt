@@ -1,0 +1,37 @@
+Release notes Niobio Cash Wallet
+
+v1.3.7
+- NCIP 0004: Allows flexible wallet node fee
+- New language files
+- Remote as Default Connection Setting
+- Wallet Nodes Frame
+- Address Provider now returns url from request
+- Wallet Nodes json files
+
+v1.3.6
+- NCIP 0004: Include informational messages when sending transactions using remote node
+- NCIP 0008: Reference implementation of new URI scheme for payment orders
+- Protection against burn vector attack
+
+v1.3.5
+- Fix sync error on transactions list
+
+v.1.3.4
+- DNS checkpoints
+- Several layout improvements
+- Corrections on Portuguese translation
+- Better status messages
+- Fix hanging on open and close wallet
+
+v.1.3.3
+- Fix hard fork at height 93000
+
+v.1.3.2
+- Use niobio-wallet repository for update.txt location
+- Prepare for hard fork to block version 5: decrease reward and cryptonight heavy
+- Lock sending NBR while wallet is not synchronized
+
+v.1.3.1
+- Fix checkpoint range handling for PoW verification
+- Added option to see transaction on explorer
+- Small bug fixes

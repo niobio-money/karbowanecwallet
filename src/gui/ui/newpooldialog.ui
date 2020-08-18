@@ -61,13 +61,6 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="m_cancelButton">
-       <property name="text">
-        <string>Cancel</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QPushButton" name="m_okButton">
        <property name="text">
         <string>OK</string>
@@ -77,6 +70,13 @@
        </property>
        <property name="default">
         <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_cancelButton">
+       <property name="text">
+        <string>Cancel</string>
        </property>
       </widget>
      </item>

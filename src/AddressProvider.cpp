@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2016 The Cryptonote developers
 // Copyright (c) 2015-2016 XDN developers
 // Copyright (c) 2016 Karbowanec developers
+// Copyright (c) 2019 Niobio Cash developers <helder.garcia@gmail.com>
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -26,8 +27,9 @@ void AddressProvider::getAddress(const QString& _urlString) {
   if (!url.isValid()) {
     return;
   }
-
+  auto now = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
   QNetworkRequest request(url);
+  request.setAttribute(QNetworkRequest::User, now);
   QNetworkReply* reply = m_networkManager.get(request);
   connect(reply, &QNetworkReply::readyRead, this, &AddressProvider::readyRead);
   connect(reply, &QNetworkReply::finished, reply, &QNetworkReply::deleteLater);
@@ -36,17 +38,33 @@ void AddressProvider::getAddress(const QString& _urlString) {
 void AddressProvider::readyRead() {
   QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
   QByteArray data = reply->readAll();
+  QVariant field = reply->request().attribute(QNetworkRequest::User);
+  bool ok;
+  qlonglong timeSent = field.toLongLong(&ok);
+  qlonglong _latency = 0;
+  qlonglong now = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+  if (ok) {
+    _latency = now - timeSent;
+  }
+
   QJsonDocument doc = QJsonDocument::fromJson(data);
   if (doc.isNull()) {
     return;
   }
 
   QJsonObject obj = doc.object();
-
   QString address = obj.value("fee_address").toString();
 
   if (!address.isEmpty()) {
-    Q_EMIT addressFoundSignal(address);
+    QString _url = reply->url().toString();
+    _url.replace("/feeaddress", "");
+    _url.replace("https://", "");
+    _url.replace("http://", "");
+    obj.insert("url", _url);
+    if(_latency > 0) {
+      obj.insert("latency", _latency);
+    }
+    Q_EMIT addressFoundSignal(obj);
   }
 }
 

@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Cryptonote developers
-// Copyright (c) 2016-2017 The Karbowanec developers
+// Copyright (c) 2016-2017 - 2019 Niobio Cash developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -55,20 +55,20 @@ QString CurrencyAdapter::formatAmount(quint64 _amount) const {
   }
 
   quint32 dot_pos = result.length() - getNumberOfDecimalPlaces();
-  for (quint32 pos = result.length() - 1; pos > dot_pos + 1; --pos) {
-    if (result[pos] == '0') {
-      result.remove(pos, 1);
-    } else {
-      break;
-    }
-  }
+  //for (quint32 pos = result.length() - 1; pos > dot_pos + 1; --pos) {
+  //  if (result[pos] == '0') {
+  //    result.remove(pos, 1);
+  //  } else {
+  //    break;
+  //  }
+  //}
 
   result.insert(dot_pos, ".");
-  for (qint32 pos = dot_pos - 3; pos > 0; pos -= 3) {
-    if (result[pos - 1].isDigit()) {
-        //result.insert(pos, ',');
-    }
-  }
+  //for (qint32 pos = dot_pos - 3; pos > 0; pos -= 3) {
+  //  if (result[pos - 1].isDigit()) {
+  //      //result.insert(pos, ',');
+  //  }
+  //}
 
   return result;
 }
@@ -105,6 +105,14 @@ quint64 CurrencyAdapter::parseAmount(const QString& _amountString) const {
 
   return amountString.toULongLong();
 }
+
+	QString CurrencyAdapter::formatPercent(float _amount) const {
+    QString s = 0;
+		if (_amount > 0) {
+		    s = QString::number(_amount);
+    }
+		return s;
+	}
 
 bool CurrencyAdapter::validateAddress(const QString& _address) const {
   CryptoNote::AccountPublicAddress internalAddress;

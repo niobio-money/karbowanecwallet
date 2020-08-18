@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2016 The Cryptonote developers
 // Copyright (c) 2011-2013 The Bitcoin Core developers
 // Copyright (c) 2015-2016 XDN developers
-// Copyright (c) 2016-2017 The Karbowanec developers
+// Copyright (c) 2017 - 2019 Niobio Cash developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -107,7 +107,7 @@ void MainWindow::connectToSignals() {
   connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionCreatedSignal, this, [this]() {
       QApplication::alert(this);
   });
-  
+
   connect(&NodeAdapter::instance(), &NodeAdapter::peerCountUpdatedSignal, this, &MainWindow::peerCountUpdated, Qt::QueuedConnection);
   connect(m_ui->m_exitAction, &QAction::triggered, qApp, &QApplication::quit);
   connect(m_ui->m_accountFrame, &AccountFrame::showQRcodeSignal, this, &MainWindow::onShowQR, Qt::QueuedConnection);
@@ -115,8 +115,13 @@ void MainWindow::connectToSignals() {
   connect(m_connectionStateIconLabel, SIGNAL(clicked()), this, SLOT(showStatusInfo()));
 }
 
+void MainWindow::setDefaultWindowTitle() {
+    setWindowTitle(QString(tr("Niobio Cash Wallet %1")).arg(Settings::instance().getVersion()) + " - " + Settings::instance().getWalletFile());
+}
+
 void MainWindow::initUi() {
-  setWindowTitle(QString(tr("Niobio Wallet %1")).arg(Settings::instance().getVersion()));
+    setDefaultWindowTitle();
+
 #ifdef Q_OS_WIN32
   createTrayIcon();
 #endif
@@ -140,6 +145,7 @@ void MainWindow::initUi() {
   m_ui->m_transactionsFrame->hide();
   m_ui->m_addressBookFrame->hide();
   m_ui->m_miningFrame->hide();
+  m_ui->m_walletNodesFrame->hide();
 
   m_tabActionGroup->addAction(m_ui->m_overviewAction);
   m_tabActionGroup->addAction(m_ui->m_sendAction);
@@ -147,6 +153,7 @@ void MainWindow::initUi() {
   m_tabActionGroup->addAction(m_ui->m_transactionsAction);
   m_tabActionGroup->addAction(m_ui->m_addressBookAction);
   m_tabActionGroup->addAction(m_ui->m_miningAction);
+  m_tabActionGroup->addAction(m_ui->m_walletNodesAction);
 
   m_ui->m_overviewAction->toggle();
   encryptedFlagChanged(false);
@@ -160,7 +167,7 @@ void MainWindow::initUi() {
   m_trackingModeIconLabel->setPixmap(QPixmap(":icons/tracking").scaledToHeight(16, Qt::SmoothTransformation));
   m_remoteModeIconLabel->hide();
   m_trackingModeIconLabel->hide();
-  m_trackingModeIconLabel->setToolTip(tr("Tracking wallet. Spending unawailable"));
+  m_trackingModeIconLabel->setToolTip(tr("Tracking wallet. Spending unavailable"));
   m_remoteModeIconLabel->setToolTip(tr("Connected through remote node"));
 
   QString connection = Settings::instance().getConnection();
@@ -552,7 +559,7 @@ void MainWindow::DisplayCmdLineHelp() {
     QMessageBox *msg = new QMessageBox(QMessageBox::Information, QObject::tr("Help"),
                        cmdLineParser.getHelpText(),
                        QMessageBox::Ok, this);
-    msg->setInformativeText(tr("More info can be found at www.karbowanec.com in Documentation section"));
+    msg->setInformativeText(tr("More info can be found at project's web site: niobiocash.org"));
     QFont font = QFontDatabase::systemFont(QFontDatabase::FixedFont);
     msg->setFont(font);
     QSpacerItem* horizontalSpacer = new QSpacerItem(650, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
@@ -764,6 +771,9 @@ void MainWindow::showMessage(const QString& _text, QtMsgType _type) {
   case QtDebugMsg:
     QMessageBox::information(this, tr("Wallet"), _text);
     break;
+  case QtInfoMsg:
+      QMessageBox::information(this, tr("Wallet"), _text);
+      break;
   default:
     break;
   }
@@ -809,6 +819,9 @@ void MainWindow::walletSynchronized(int _error, const QString& _error_text) {
 
 void MainWindow::walletOpened(bool _error, const QString& _error_text) {
   if (!_error) {
+
+      setDefaultWindowTitle();
+
     m_ui->accountToolBar->show();
     m_ui->m_closeWalletAction->setEnabled(true);
     m_ui->m_exportTrackingKeyAction->setEnabled(true);
@@ -864,6 +877,7 @@ void MainWindow::walletClosed() {
   m_ui->m_transactionsFrame->hide();
   m_ui->m_addressBookFrame->hide();
   //m_ui->m_miningFrame->hide();
+  m_ui->m_walletNodesFrame->hide();
   m_encryptionStateIconLabel->hide();
   m_trackingModeIconLabel->hide();
   m_synchronizationStateIconLabel->hide();
@@ -890,7 +904,7 @@ void MainWindow::createTrayIcon()
 {
 #ifdef Q_OS_WIN
     m_trayIcon = new QSystemTrayIcon(QPixmap(":images/cryptonote"), this);
-    QString toolTip = QString(tr("Niobio Wallet %1")).arg(Settings::instance().getVersion());
+    QString toolTip = QString(tr("Niobio Cash Wallet %1")).arg(Settings::instance().getVersion());
     m_trayIcon->setToolTip(toolTip);
     m_trayIcon->show();
 #endif
@@ -927,6 +941,7 @@ void MainWindow::createTrayIconMenu()
     trayIconMenu->addAction(m_ui->m_transactionsAction);
     trayIconMenu->addAction(m_ui->m_addressBookAction);
     trayIconMenu->addAction(m_ui->m_miningAction);
+    trayIconMenu->addAction(m_ui->m_walletNodesAction);
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(m_ui->m_openWalletAction);
     trayIconMenu->addAction(m_ui->m_closeWalletAction);

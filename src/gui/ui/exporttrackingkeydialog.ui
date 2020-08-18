@@ -52,6 +52,9 @@
      <property name="text">
       <string>Tracking key allows to see all incoming transactions of this wallet. It does not allow to spend funds.</string>
      </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
    <item>

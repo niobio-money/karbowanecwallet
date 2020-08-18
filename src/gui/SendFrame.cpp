@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Cryptonote developers
 // Copyright (c) 2015-2016 XDN developers
-// Copyright (c) 2016-2017 The Karbowanec developers
+// Copyright (c) 2016-2017 - 2019 Niobio Cash developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,6 +18,9 @@
 #include <QUrlQuery>
 #include <QTime>
 #include <QUrl>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include "ui_sendframe.h"
 #include "Settings.h"
 #include "AddressProvider.h"
@@ -26,8 +29,9 @@
 
 namespace WalletGui {
 
-SendFrame::SendFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::SendFrame), m_addressProvider(new AddressProvider(this)) {
+SendFrame::SendFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::SendFrame), m_addressProvider(new AddressProvider(this)), m_glassFrame(new SendGlassFrame(nullptr)) {
   m_ui->setupUi(this);
+  m_glassFrame->setObjectName("m_sendGlassFrame");
   clearAllClicked();
   mixinValueChanged(m_ui->m_mixinSlider->value());
   remote_node_fee = 0;
@@ -37,12 +41,20 @@ SendFrame::SendFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::SendFrame
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualBalanceUpdatedSignal, this, &SendFrame::walletActualBalanceUpdated,
     Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &SendFrame::reset);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this, &SendFrame::walletSynchronized
+    , Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationProgressUpdatedSignal,
+    this, &SendFrame::walletSynchronizationInProgress, Qt::QueuedConnection);
 
   m_ui->m_tickerLabel->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_feeSpin->setSuffix(" " + CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_donateSpin->setSuffix(" " + CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_feeSpin->setMinimum(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFee()).toDouble());
   m_ui->m_remote_label->hide();
+  m_ui->m_remote_fee_help->hide();
+  m_ui->m_remote_fee_value->hide();
+  m_ui->m_sendButton->setEnabled(false);
+  m_ui->m_descriptionFromCounterParty->clear();
 
   QRegExp hexMatcher("^[0-9A-F]{64}$", Qt::CaseInsensitive);
   QValidator *validator = new QRegExpValidator(hexMatcher, this);
@@ -58,6 +70,18 @@ SendFrame::SendFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::SendFrame
 }
 
 SendFrame::~SendFrame() {
+    m_transfers.clear();
+    m_glassFrame->deleteLater();
+}
+
+void SendFrame::walletSynchronized(int _error, const QString& _error_text) {
+  m_ui->m_sendButton->setEnabled(true);
+  m_glassFrame->remove();
+}
+
+void SendFrame::walletSynchronizationInProgress(quint64 _current, quint64 _total) {
+  m_glassFrame->install(this);
+  m_glassFrame->updateSynchronizationState(_current, _total);
 }
 
 void SendFrame::addRecipientClicked() {
@@ -90,8 +114,9 @@ void SendFrame::clearAllClicked() {
   addRecipientClicked();
   amountValueChange();
   m_ui->m_paymentIdEdit->clear();
-  m_ui->m_mixinSlider->setValue(5);
+  m_ui->m_mixinSlider->setValue(1);
   m_ui->m_feeSpin->setValue(m_ui->m_feeSpin->minimum());
+  m_ui->m_descriptionFromCounterParty->clear();
 }
 
 void SendFrame::reset() {
@@ -113,21 +138,22 @@ void SendFrame::amountValueChange() {
     fees.clear();
     Q_FOREACH (TransferFrame * transfer, m_transfers) {
       quint64 amount = CurrencyAdapter::instance().parseAmount(transfer->getAmountString());
-      quint64 percentfee = amount * 0.25 / 100; // fee is 0.25%
+      quint64 percentfee = amount * SendFrame::remote_node_fee_percent / 100;
       fees.push_back(percentfee);
-      }
+    }
     remote_node_fee = 0;
     if( !remote_node_fee_address.isEmpty() ) {
         for(QVector<quint64>::iterator it = fees.begin(); it != fees.end(); ++it) {
             remote_node_fee += *it;
         }
-        if (remote_node_fee < CurrencyAdapter::instance().getMinimumFee()) {
-            remote_node_fee = CurrencyAdapter::instance().getMinimumFee();
-        }
-        if (remote_node_fee > 1000000) {
-            remote_node_fee = 1000000;
+        if (remote_node_fee > 1000000000) {
+          remote_node_fee = 1000000000;
+          m_ui->m_remote_fee_value->setText(CurrencyAdapter::instance().formatAmount(remote_node_fee)  + " NBR");
+        } else {
+          m_ui->m_remote_fee_value->setText(CurrencyAdapter::instance().formatAmount(remote_node_fee)  + " NBR (" + CurrencyAdapter::instance().formatPercent(SendFrame::remote_node_fee_percent) + "%)");
         }
     }
+
 
     QVector<float> donations;
     donations.clear();
@@ -161,9 +187,34 @@ void SendFrame::insertPaymentID(QString _paymentid) {
     m_ui->m_paymentIdEdit->setText(_paymentid);
 }
 
-void SendFrame::onAddressFound(const QString& _address) {
-    SendFrame::remote_node_fee_address = _address;
+void SendFrame::insertMixin(quint32 _mixinValue) {
+    m_ui->m_mixinSlider->setValue(_mixinValue);
+}
+
+void SendFrame::insertDescription(QString _description) {
+    m_ui->m_descriptionFromCounterParty->setText(_description);
+}
+
+void SendFrame::onAddressFound(const QJsonObject& _remoteNodeData) {
+  QString address = _remoteNodeData.value("fee_address").toString();
+  if (!address.isEmpty()) {
+    SendFrame::remote_node_fee_address = address;
+    float feePercent = 0.25;
+    if(_remoteNodeData.contains("fee_percent")) {
+      feePercent = _remoteNodeData.value("fee_percent").toDouble();
+      if (feePercent < 0 || feePercent > 5) { // prevent abuse
+        feePercent = 0.25;
+      }
+    }
+    QString remoteLabelText = m_ui->m_remote_label->text();
+    m_ui->m_remote_label->setText(remoteLabelText.arg(CurrencyAdapter::instance().formatPercent(feePercent)));
     m_ui->m_remote_label->show();
+    m_ui->m_remote_fee_help->show();
+    m_ui->m_remote_fee_value->show();
+    SendFrame::remote_node_fee_percent = feePercent;
+  } else {
+    SendFrame::remote_node_fee_percent = 0;
+  }
 }
 
 void SendFrame::openUriClicked() {
@@ -179,16 +230,16 @@ void SendFrame::openUriClicked() {
 }
 
 void SendFrame::parsePaymentRequest(QString _request) {
-    if(_request.startsWith("karbowanec://", Qt::CaseInsensitive))
+    if(_request.startsWith("niobiocash://", Qt::CaseInsensitive))
     {
-       _request.replace(0, 13, "karbowanec:");
+       _request.replace(0, 13, "niobiocash:");
     }
-    if(!_request.startsWith("karbowanec:", Qt::CaseInsensitive)) {
-      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Payment request should start with karbowanec:"), QtCriticalMsg));
+    if(!_request.startsWith("niobiocash:", Qt::CaseInsensitive)) {
+      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Payment request should start with niobiocash:"), QtCriticalMsg));
       return;
     }
 
-    if(_request.startsWith("karbowanec:", Qt::CaseInsensitive))
+    if(_request.startsWith("niobiocash:", Qt::CaseInsensitive))
     {
       _request.remove(0, 11);
     }
@@ -207,7 +258,8 @@ void SendFrame::parsePaymentRequest(QString _request) {
 
     QUrlQuery uriQuery(_request);
 
-    quint64 amount = CurrencyAdapter::instance().parseAmount(uriQuery.queryItemValue("amount"));
+    bool ok;
+    quint64 amount = uriQuery.queryItemValue("amount").toLong(&ok, 10);
     if(amount != 0){
         m_transfers.at(0)->TransferFrame::setAmount(amount);
     }
@@ -220,6 +272,28 @@ void SendFrame::parsePaymentRequest(QString _request) {
     QString payment_id = uriQuery.queryItemValue("payment_id");
     if(!payment_id.isEmpty()){
         SendFrame::insertPaymentID(payment_id);
+    }
+
+    QString mixinStr = uriQuery.queryItemValue("anon");
+    quint32 mixin = mixinStr.toInt();
+    if(mixin != 0){
+      SendFrame::insertMixin(mixin);
+    }
+
+    QString priority = uriQuery.queryItemValue("priority").toLower();
+    if(!priority.isEmpty()){
+      if(priority == "low") {
+        m_ui->m_feeSpin->setValue(0.00001);
+      } else if (priority == "medium") {
+        m_ui->m_feeSpin->setValue(0.00005);
+      } else if (priority == "high") {
+        m_ui->m_feeSpin->setValue(0.0001);
+      }
+    }
+
+    QString description = uriQuery.queryItemValue("desc");
+    if(!description.isEmpty()){
+      SendFrame::insertDescription(description);
     }
 
 }
@@ -258,20 +332,19 @@ void SendFrame::sendClicked() {
       // Dev donation
       if (m_ui->donateCheckBox->isChecked()) {
           CryptoNote::WalletLegacyTransfer walletTransfer;
-          walletTransfer.address = "NF2mKbSet2M3eF23BLDnNyEqzbgE82KoxfEiydfonGAEXdP3auAFLg8Jh2PmbQAvFZ2r7ArM1sw2GbvyAnrThQno6PPYCpz";
+          walletTransfer.address = "NEzRb8Yf14L6QD4aKfRLigD9mYKyN7tYRXjQj1vpgqN89ps7ywXpi1vb1TijA8QiayhHVbJyxYNZtNC38hvmGVzbCeD2KrK";
           walletTransfer.amount = CurrencyAdapter::instance().parseAmount(m_ui->m_donateSpin->cleanText());
           walletTransfers.push_back(walletTransfer);
       }
 
       // Remote node fee
       QString connection = Settings::instance().getConnection();
-      if(connection.compare("remote") == 0) {
-          if (!SendFrame::remote_node_fee_address.isEmpty()) {
-            CryptoNote::WalletLegacyTransfer walletTransfer;
-			walletTransfer.address = "NF2mKbSet2M3eF23BLDnNyEqzbgE82KoxfEiydfonGAEXdP3auAFLg8Jh2PmbQAvFZ2r7ArM1sw2GbvyAnrThQno6PPYCpz"; // SendFrame::remote_node_fee_address.toStdString();
-            walletTransfer.amount = remote_node_fee;
-            walletTransfers.push_back(walletTransfer);
-          }
+      if(connection.compare("remote") == 0 && !(SendFrame::remote_node_fee_address.isEmpty())) {
+        std::string remoteNodeWalletAddress = SendFrame::remote_node_fee_address.toStdString();
+        CryptoNote::WalletLegacyTransfer walletTransfer;
+        walletTransfer.address = remoteNodeWalletAddress;
+        walletTransfer.amount = remote_node_fee;
+        walletTransfers.push_back(walletTransfer);
       }
 
       // Miners fee

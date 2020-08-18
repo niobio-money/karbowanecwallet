@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Cryptonote developers
-// Copyright (c) 2016-2017 The Karbowanec developers
+// Copyright (c) 2016-2017 - 2019 Niobio Cash developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,6 +9,7 @@
 #include <memory>
 #include <string>
 #include <system_error>
+#include <INode.h>
 
 namespace CryptoNote {
 
@@ -47,6 +48,8 @@ public:
   virtual uint64_t getIncomingConnectionsCount() = 0;
   virtual uint64_t getWhitePeerlistSize() = 0;
   virtual uint64_t getGreyPeerlistSize() = 0;
+  virtual uint8_t getCurrentBlockMajorVersion() = 0;
+  virtual CryptoNote::BlockHeaderInfo getLastLocalBlockHeaderInfo() = 0;
 
   virtual void startMining(const std::string& address, size_t threads_count) = 0;
   virtual void stopMining() = 0;

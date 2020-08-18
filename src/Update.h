@@ -1,4 +1,4 @@
-// Copyright (c) 2016 The Karbowanec developers
+// Copyright (c) 2016 - 2019 Niobio Cash developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef UPDATE_H
@@ -10,13 +10,17 @@
 #include <QNetworkReply>
 #include <QUrl>
 
-const static QString KRBCOIN_UPDATE_URL = "http://niobio.money/download/update.txt";
+const static QString NBRCOIN_UPDATE_URL = "https://raw.githubusercontent.com/niobio-cash/niobio-wallet/master/update.txt";
 
 class Updater : public QObject
 {
     Q_OBJECT
 public:
     explicit Updater(QObject *parent = 0);
+    
+     ~Updater() {
+        delete manager;
+}
 
     void checkForUpdate();
 

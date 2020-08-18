@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Cryptonote developers
-// Copyright (c) 2016 The Karbowanec developers
+// Copyright (c) 2016 - 2019 Niobio Cash developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -75,14 +75,18 @@ void OverviewFrame::layoutChanged() {
 
 void OverviewFrame::updateActualBalance(quint64 _balance) {
   m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance).remove(','));
+  m_ui->m_actualBalanceLabel->setAlignment(Qt::AlignRight);
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   m_ui->m_totalBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingBalance).remove(','));
+  m_ui->m_totalBalanceLabel->setAlignment(Qt::AlignRight);
 }
 
 void OverviewFrame::updatePendingBalance(quint64 _balance) {
   m_ui->m_pendingBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance).remove(','));
+  m_ui->m_pendingBalanceLabel->setAlignment(Qt::AlignRight);
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   m_ui->m_totalBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualBalance).remove(','));
+  m_ui->m_totalBalanceLabel->setAlignment(Qt::AlignRight);
 }
 
 void OverviewFrame::reset() {

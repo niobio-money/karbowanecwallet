@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Cryptonote developers
 // Copyright (c) 2015-2016 XDN developers
-// Copyright (c) 2016 The Karbowanec developers
+// Copyright (c) 2016 - 2019 Niobio Cash developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,6 +8,8 @@
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonValue>
 #include <QSettings>
 #include <QStandardPaths>
 #include <QTextCodec>
@@ -27,6 +29,7 @@ Q_DECL_CONSTEXPR char OPTION_RPCNODES[] = "remoteNodes";
 Q_DECL_CONSTEXPR char OPTION_DAEMON_PORT[] = "daemonPort";
 Q_DECL_CONSTEXPR char OPTION_REMOTE_NODE[] = "remoteNode";
 Q_DECL_CONSTEXPR char OPTION_CURRENT_POOL[] = "currentPool";
+const char OPTION_WALLET_THEME[] = "theme";
 
 Settings& Settings::instance() {
   static Settings inst;
@@ -51,17 +54,16 @@ void Settings::load() {
     cfgFile.close();
     if (!m_settings.contains("walletFile")) {
       m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
+      m_walletNodesFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".walletnodes");
     } else {
       m_addressBookFile = m_settings.value("walletFile").toString();
       m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
+      m_walletNodesFile = m_settings.value("walletFile").toString();
+      m_walletNodesFile.replace(m_walletNodesFile.lastIndexOf(".wallet"), 7, ".walletnodes");
     }
 
     if (!m_settings.contains(OPTION_LANGUAGE)) {
          m_currentLang = "pt";
-    }
-
-    if (!m_settings.contains(OPTION_CONNECTION)) {
-         m_connectionMode = "auto";
     }
 
     if (!m_settings.contains(OPTION_DAEMON_PORT)) {
@@ -70,6 +72,7 @@ void Settings::load() {
 
   } else {
     m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
+    m_walletNodesFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".walletnodes");
   }
 
   if (m_settings.contains(OPTION_LANGUAGE)) {
@@ -78,6 +81,13 @@ void Settings::load() {
 
   if (m_settings.contains(OPTION_CONNECTION)) {
         m_connectionMode = m_settings.value(OPTION_CONNECTION).toString();
+  } else {
+    m_settings.insert(OPTION_CONNECTION, "remote");
+    m_connectionMode = "remote";
+  }
+
+  if (!m_settings.contains(OPTION_REMOTE_NODE)) {
+    m_settings.insert(OPTION_REMOTE_NODE, "node0001.niobiocash.nl:8314");
   }
 
   if (!m_settings.contains(OPTION_DAEMON_PORT)) {
@@ -89,21 +99,33 @@ void Settings::load() {
   }
 
   QStringList defaultPoolList;
-  defaultPoolList << "us-nbr.4miner.me:3334" << "nb.selvahost.com.br:3333" << "us-nbr.4miner.me:5556";
-  if (!m_settings.contains(OPTION_MINING_POOLS)) {
-    setMiningPoolList(QStringList() << defaultPoolList);
-  } else {
-    QStringList poolList = getMiningPoolList();
-    Q_FOREACH (const QString& pool, defaultPoolList) {
-      if (!poolList.contains(pool)) {
-        poolList << pool;
-      }
-    }
-    setMiningPoolList(poolList);
-  }
+  defaultPoolList
+  << "us-nbr.4miner.me:3334"
+  << "pool.niobiocash.nl:3334"
+  << "nbr.ciapool.com:3333"
+  << "nb.selvahost.com.br:3333"
+  << "niobiopool.com.br:3331"
+  << "niobio.ingest.cryptoknight.cc:5801"
+  << "nbr.sqhubpool.com:3333"
+  << "niobio.smartcoinpool.com:6436"
+  << "pool.nbr.easyhash.pro:3999"
+  << "stratum.niobiocash.com:4334";
+  //if (!m_settings.contains(OPTION_MINING_POOLS)) {
+  setMiningPoolList(QStringList() << defaultPoolList);
+  //} else {
+  //  QStringList poolList = getMiningPoolList();
+  //  Q_FOREACH (const QString& pool, defaultPoolList) {
+  //    if (!poolList.contains(pool)) {
+  //      poolList << pool;
+  //    }
+  //  }
+  //  setMiningPoolList(poolList);
+  //}
 
   QStringList defaultNodesList;
-  defaultNodesList << "45.55.141.227:8314" << "35.225.224.17:8314" << "35.205.250.90:8314" << "35.227.102.144:8314" << "35.199.180.121:8314" << "35.194.207.184:8314" << "66.70.167.192:8314" << "192.99.133.153:8314" << "138.197.222.188:8314";
+  defaultNodesList << "remote-nbr-hydra.niobioco.in:8314"
+  << "remote-nbr-002.niobioco.in:8314"
+  << "node0001.niobiocash.nl:8314";
   if (!m_settings.contains(OPTION_RPCNODES)) {
     setRpcNodesList(QStringList() << defaultNodesList);
   } else {
@@ -115,6 +137,8 @@ void Settings::load() {
     }
     setRpcNodesList(nodesList);
   }
+  //auto wNodes = new WalletNodes;
+  //wNodes->GetWalletNodes();
 
   if (!m_settings.contains("recentWallets")) {
      QStringList recentWallets;
@@ -199,6 +223,10 @@ QString Settings::getAddressBookFile() const {
   return m_addressBookFile;
 }
 
+QString Settings::getWalletNodesFile() const {
+  return m_walletNodesFile;
+}
+
 bool Settings::isEncrypted() const {
   return m_settings.contains("encrypted") ? m_settings.value("encrypted").toBool() : false;
 }
@@ -219,6 +247,10 @@ QStringList Settings::getMiningPoolList() const {
   return res;
 }
 
+QString Settings::getCurrentTheme() const {
+  return m_settings.contains(OPTION_WALLET_THEME) ? m_settings.value(OPTION_WALLET_THEME).toString() : "light";
+}
+
 QString Settings::getLanguage() const {
     QString currentLang;
     if (m_settings.contains(OPTION_LANGUAGE)) {
@@ -230,10 +262,10 @@ QString Settings::getLanguage() const {
 QString Settings::getConnection() const {
     QString connection;
     if (m_settings.contains(OPTION_CONNECTION)) {
-        connection = m_settings.value(OPTION_CONNECTION).toString();
+      connection = m_settings.value(OPTION_CONNECTION).toString();
     }
     else {
-    connection = "auto"; // default
+      connection = "remote"; // default
     }
     return connection;
 }
@@ -247,23 +279,32 @@ QStringList Settings::getRpcNodesList() const {
   return res;
 }
 
+QJsonValue Settings::getRpcNodesListAsJson() const {
+  QJsonValue res;
+  if (m_settings.contains(OPTION_RPCNODES)) {
+    return m_settings.value(OPTION_RPCNODES);
+  } else {
+    return res;
+  }
+}
+
 quint16 Settings::getCurrentLocalDaemonPort() const {
-    quint16 port;
-    if (m_settings.contains(OPTION_DAEMON_PORT)) {
-        port = m_settings.value(OPTION_DAEMON_PORT).toVariant().toInt();
-    }
-    return port;
+  quint16 port;
+  if (m_settings.contains(OPTION_DAEMON_PORT)) {
+    port = m_settings.value(OPTION_DAEMON_PORT).toVariant().toInt();
+  }
+  return port;
 }
 
 QString Settings::getCurrentRemoteNode() const {
-    QString remotenode;
-    if (m_settings.contains(OPTION_REMOTE_NODE)) {
-        remotenode = m_settings.value(OPTION_REMOTE_NODE).toString();
-	}
-	else {
-		remotenode = "45.55.141.227:8313";
-	}
-    return remotenode;
+  QString remotenode;
+  if (m_settings.contains(OPTION_REMOTE_NODE)) {
+    remotenode = m_settings.value(OPTION_REMOTE_NODE).toString();
+  }
+  else {
+    remotenode = "node0001.niobiocash.nl:8314";
+  }
+  return remotenode;
 }
 
 QString Settings::getCurrentPool() const {
@@ -374,6 +415,8 @@ void Settings::setWalletFile(const QString& _file) {
   saveSettings();
   m_addressBookFile = m_settings.value("walletFile").toString();
   m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
+  m_walletNodesFile = m_settings.value("walletFile").toString();
+  m_walletNodesFile.replace(m_walletNodesFile.lastIndexOf(".wallet"), 7, ".walletnodes");
 }
 
 void Settings::setEncrypted(bool _encrypted) {
@@ -480,7 +523,7 @@ void Settings::setCurrentLocalDaemonPort(const quint16& _daemonPort) {
 
 void Settings::setCurrentRemoteNode(const QString& _remoteNode) {
     if (!_remoteNode.isEmpty()) {
-    m_settings.insert(OPTION_REMOTE_NODE, _remoteNode);
+      m_settings.insert(OPTION_REMOTE_NODE, _remoteNode);
     }
     saveSettings();
 }

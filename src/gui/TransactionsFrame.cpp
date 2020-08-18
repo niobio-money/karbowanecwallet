@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Cryptonote developers
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2016-2017 The Karbowanec developers
+// Copyright (c) 2016-2017 - 2019 Niobio Cash developers - Derived work from -Karbowanec-
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,6 +10,7 @@
 #include <QHBoxLayout>
 #include <QComboBox>
 #include <QDateTimeEdit>
+#include <QDesktopServices>
 
 #include "CurrencyAdapter.h"
 #include "MainWindow.h"
@@ -49,6 +50,7 @@ TransactionsFrame::TransactionsFrame(QWidget* _parent) : QFrame(_parent), m_ui(n
   contextMenu->addAction(QString(tr("Copy transaction &hash")), this, SLOT(copyTxHash()));
   contextMenu->addAction(QString(tr("Copy Payment &ID")), this, SLOT(copyPaymentID()));
   contextMenu->addAction(QString(tr("Copy &amount")), this, SLOT(copyAmount()));
+  contextMenu->addAction(QString(tr("See on &block explorer")), this, SLOT(seeOnBlockExplorer()));
   contextMenu->addAction(QString(tr("Show &details")), this, SLOT(showTxDetails()));
 
   m_ui->m_selectedAmountLabel->hide();
@@ -163,6 +165,11 @@ void TransactionsFrame::copyPaymentID(){
 void TransactionsFrame::showTxDetails(){
   showTransactionDetails(index);
 }
+void TransactionsFrame::seeOnBlockExplorer(){
+    QString hash = index.sibling(index.row(), TransactionsModel::COLUMN_HASH).data().toString();
+    QString url = "http://explorer.niobiocash.com/?hash="+hash+"#blockchain_transaction";
+    QDesktopServices::openUrl(QUrl(url));
+}
 
 void TransactionsFrame::computeSelected() {
   double amount = 0;
@@ -175,7 +182,7 @@ void TransactionsFrame::computeSelected() {
         QString amountstring = index.sibling(index.row(), TransactionsModel::COLUMN_AMOUNT).data().toString().remove(',');
         amount += amountstring.toDouble();
     }
-    QString amountText = QString::number(amount, 'f', 12) + " " + CurrencyAdapter::instance().getCurrencyTicker().toUpper();
+    QString amountText = QString::number(amount, 'f', 8) + " " + CurrencyAdapter::instance().getCurrencyTicker().toUpper();
     if (amount < 0) amountText = "<span style='color:red;'>" + amountText + "</span>";
     m_ui->m_selectedAmount->show();
     m_ui->m_selectedAmount->setText(amountText);

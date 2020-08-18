@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pt" sourcelanguage="en">
+<TS version="2.1" language="pt_PT">
 <context>
     <name>AboutDialog</name>
     <message>
         <source>About %1</source>
-        <translation>Sobre</translation>
+        <translation>Sobre %1</translation>
     </message>
     <message>
         <source>Close</source>
         <translation>Fechar</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Karbowanec v. %1&lt;/p&gt;&lt;p&gt;This is the next generation anonymous cryptocurrency based on CryptoNote.&lt;/p&gt;&lt;p&gt;Copyright (c) 2012-2015. CryptoNote Developers&lt;/p&gt;&lt;p&gt;Copyright (c) 2015-2016. DigitalNote Developers&lt;/p&gt;&lt;p&gt;Copyright (c) 2016-2017. Karbowanec Developers&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://cryptonote.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://cryptonote.org/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://karbowanec.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://karbowanec.com/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Niobio Cash v. %1&lt;/p&gt;&lt;p&gt;Esta é uma nova geração CryptoLanguage baseada no CryptoNote. &lt;/p&gt;&lt;p&gt;Copyright (c) 2012-2015. CryptoNote Developers&lt;/p&gt;&lt;p&gt;Copyright (c) 2015-2017. DigitalNote Developers&lt;/p&gt;&lt;p&gt;Copyright (c) 2016-2017. Niobo Cash Desenvolvedores &lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://cryptonote.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://cryptonote.org/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;hhttp://niobiocash.com/&quot;&gt;&lt;span  style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://niobiocash.com/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Niobio Cash Wallet v. %1&lt;/p&gt;&lt;p&gt;This is the next generation anonymous cryptocurrency based on CryptoNote.&lt;/p&gt;&lt;p&gt;Copyright (c) 2012-2015. CryptoNote Developers&lt;br/&gt;Copyright (c) 2015-2016. DigitalNote Developers&lt;br/&gt;Copyright (c) 2016-2017. Karbowanec Developers&lt;br/&gt;Copyright (c) 2017-2019. Niobio Cash developers&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;https://cryptonote.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://cryptonote.org/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://karbowanec.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://karbowanec.com/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://niobiocash.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://niobiocash.org/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Niobio Cash Wallet v. %1&lt;/p&gt;&lt;p&gt;Niobio Cash: a moeda digital brasileira definitiva. Baseada na tecnologia CryptoNote, que garante anonimato.&lt;/p&gt;&lt;p&gt;Copyright (c) 2012-2015. CryptoNote Developers&lt;br/&gt;Copyright (c) 2015-2016. DigitalNote Developers&lt;br/&gt;Copyright (c) 2016-2017. Karbowanec Developers&lt;br/&gt;Copyright (c) 2017-2019. Niobio Cash developers&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;https://cryptonote.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://cryptonote.org/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://karbowanec.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://karbowanec.com/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://niobiocash.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://niobiocash.org/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>AccountFrame</name>
     <message>
         <source>Address:</source>
-        <translation type="vanished">Endereço:</translation>
+        <translation>Endereço:</translation>
     </message>
     <message>
         <source>...</source>
@@ -28,7 +28,7 @@
     </message>
     <message>
         <source>Show private key</source>
-        <translation type="vanished">Exibir chave privada</translation>
+        <translation>Exibir chave privada</translation>
     </message>
     <message>
         <source>Your account:</source>
@@ -66,6 +66,10 @@
         <source>0.00</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source> nbr</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddressBookDialog</name>
@@ -86,11 +90,11 @@
     </message>
     <message>
         <source>New address</source>
-        <translation type="vanished">Novo endereço</translation>
+        <translation>Novo endereço</translation>
     </message>
     <message>
         <source>Delete address</source>
-        <translation type="vanished">Deletar endereço</translation>
+        <translation>Deletar endereço</translation>
     </message>
     <message>
         <source>Copy address</source>
@@ -117,11 +121,11 @@
     <name>ChangeLanguageDialog</name>
     <message>
         <source>Change language</source>
-        <translation>Opções de Linguagem</translation>
+        <translation>Mudar idioma</translation>
     </message>
     <message>
         <source>Select language:</source>
-        <translation>Escolher língua:</translation>
+        <translation>Escolher idioma:</translation>
     </message>
     <message>
         <source>English</source>
@@ -129,15 +133,15 @@
     </message>
     <message>
         <source>Ukrainian</source>
-        <translation>Ucraniano</translation>
+        <translation type="vanished">Ucraniano</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation>Russo</translation>
+        <translation type="vanished">Russo</translation>
     </message>
     <message>
         <source>Polish</source>
-        <translation>Polonês</translation>
+        <translation type="vanished">Polonês</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -145,11 +149,39 @@
     </message>
     <message>
         <source>OK</source>
-        <translation>Concluído</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Belarusian</source>
-        <translation>Білоруська</translation>
+        <translation type="vanished">Білоруська</translation>
+    </message>
+    <message>
+        <source>Українська</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Русский</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polski</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Беларуская</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deutsch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Español</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Português</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -160,11 +192,11 @@
     </message>
     <message>
         <source>Ok</source>
-        <translation>Concluído</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Old password:</source>
-        <translation>Senha Antiga:</translation>
+        <translation>Senha antiga:</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -172,7 +204,7 @@
     </message>
     <message>
         <source>New password:</source>
-        <translation>Nova Senha:</translation>
+        <translation>Nova senha:</translation>
     </message>
     <message>
         <source>Confirm:</source>
@@ -186,11 +218,11 @@
 <context>
     <name>ConfirmSendDialog</name>
     <message>
-        <source>Comfirm sending %1 KRB</source>
-        <translation>Confirmar envio %1 NBR</translation>
+        <source>Comfirm sending %1 NBR</source>
+        <translation>Confirmar envio de %1 NBR</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Are you sure you want to send &lt;strong&gt;%1 KRB&lt;/strong&gt;?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Are you sure you want to send &lt;strong&gt;%1 NBR&lt;/strong&gt;?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Você tem certeza que quer enviar &lt;strong&gt;%1 NBR&lt;/strong&gt;?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -200,6 +232,10 @@
     <message>
         <source>Cancel</source>
         <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>Confirm sending %1 NBR</source>
+        <translation>Confirme enviar %1 NBR.</translation>
     </message>
 </context>
 <context>
@@ -222,19 +258,19 @@
     </message>
     <message>
         <source>Wallet will connect to local daemon on default port. In case of no local daemon running it will launch built-in node.</source>
-        <translation>A carteira se conectará ao daemon local através da porta padrão. Se o daemon local não for iniciado, a carteira iniciará o node incorporado.</translation>
+        <translation>A carteira se conectará ao node local através da porta padrão. Se o node local não for iniciado, a carteira iniciará o node incorporado.</translation>
     </message>
     <message>
         <source>Embedded</source>
-        <translation>Inserir</translation>
+        <translation>Node Embutido</translation>
     </message>
     <message>
         <source>Built-in embedded node will be used.</source>
-        <translation>O nede de rede inserido será iniciado.</translation>
+        <translation>Um node interno será iniciado e a blockchain será baixada.</translation>
     </message>
     <message>
         <source>Local daemon</source>
-        <translation>Deamon Local</translation>
+        <translation>Node Local</translation>
     </message>
     <message>
         <source>Port: </source>
@@ -242,19 +278,19 @@
     </message>
     <message>
         <source>Wallet will connect to local daemon on specified port.</source>
-        <translation>A carteira se conectará ao daemon local através da porta especificada.</translation>
+        <translation>A carteira se conectará ao node local através da porta especificada.</translation>
     </message>
     <message>
         <source>Remote daemon</source>
-        <translation>Deamon Remoto</translation>
+        <translation>Node Remoto</translation>
     </message>
     <message>
         <source>Add node</source>
         <translation>Adicionar node</translation>
     </message>
     <message>
-        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends 0.25% fee from each transaction to the node, but no more than 10 KRB.</source>
-        <translation>A carteira se conectará a um host remoto que esteja sendo executado em uma rede local ou global. Selecione o node ou especifique o endereço IP ou o domínio e a porta do novo node. Neste modo, ele paga a comissão pelo nó na quantidade de 0,25% do valor da transferência, mas não mais de 10 NBR.</translation>
+        <source>Wallet will connect to remote node running in local or global network. Please select node or specify IP address or domain name and port. In this mode wallet sends a fee from each transaction to the node, but no more than 10 NBR.</source>
+        <translation>A carteira se conectará a um node remoto que esteja sendo executado em uma rede local ou global. Selecione o node ou especifique o endereço IP ou o domínio e a porta do novo node. Neste modo, você paga uma taxa percentual para o node, mas não mais que 10 NBR.</translation>
     </message>
     <message>
         <source>Remove node</source>
@@ -270,8 +306,7 @@
     <message>
         <source>%1 wallet is saving data.
 Please wait...</source>
-        <translation>Nióbio wallet está salvando os dados.
-Por favor aguarde...</translation>
+        <translation>A carteira %1 está salvando dados. Por favor, aguarde.</translation>
     </message>
 </context>
 <context>
@@ -282,11 +317,11 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Tracking key allows to see all incoming transactions of this wallet. It does not allow to spend funds.</source>
-        <translation>A chave de rastreamento permite que você veja todas as transações recebidas desta carteira, mas você não pode gastar dinheiro.</translation>
+        <translation>A chave de rastreamento permite que você veja todas as transações recebidas desta carteira, mas você não pode enviar moedas.</translation>
     </message>
     <message>
         <source>Save to file</source>
-        <translation>Salvar no Arquivo</translation>
+        <translation>Salvar no arquivo</translation>
     </message>
     <message>
         <source>Copy key</source>
@@ -321,7 +356,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>Concluído</translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -332,7 +367,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Key:</source>
@@ -352,7 +387,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>Concluído</translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -454,7 +489,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Address Book</source>
-        <translation type="vanished">Endereço da carteira</translation>
+        <translation>Endereço da carteira</translation>
     </message>
     <message>
         <source>Create wallet</source>
@@ -474,7 +509,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Sobre</translation>
+        <translation>Sobre a Carteira Niobio Cash</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -506,7 +541,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Reset wallet</source>
-        <translation>Resetar Carteira</translation>
+        <translation>Ressincronizar saldo</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -514,15 +549,15 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Linguagem</translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <source>Change language</source>
-        <translation>Mudar linguagem</translation>
+        <translation>Mudar idioma</translation>
     </message>
     <message>
         <source>Show private key</source>
-        <translation type="vanished">Exibir private key</translation>
+        <translation>Exibir private key</translation>
     </message>
     <message>
         <source>F1</source>
@@ -534,7 +569,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Open payment request</source>
-        <translation>Abir requerimento de pagamento</translation>
+        <translation>Abrir requisição de pagamento</translation>
     </message>
     <message>
         <source>Export tracking key</source>
@@ -566,11 +601,11 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="vanished">Status</translation>
+        <translation>Status</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation type="vanished">Ferramentas</translation>
+        <translation>Ferramentas</translation>
     </message>
     <message>
         <source>Open log file</source>
@@ -592,6 +627,10 @@ Por favor aguarde...</translation>
         <source>Start pool mining automatically</source>
         <translation>Iniciar mineração na pool automaticamente </translation>
     </message>
+    <message>
+        <source>About</source>
+        <translation>Sobre</translation>
+    </message>
 </context>
 <context>
     <name>MiningFrame</name>
@@ -601,7 +640,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Mining status</source>
-        <translation type="vanished">Status de Mineração</translation>
+        <translation>Status de Mineração</translation>
     </message>
     <message>
         <source>CPU cores</source>
@@ -625,7 +664,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Pause mining</source>
-        <translation type="vanished">Pausar mineração</translation>
+        <translation>Pausar mineração</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -633,7 +672,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Pool mining</source>
-        <translation>Mineração pela Pool</translation>
+        <translation>Mineração pela pool</translation>
     </message>
     <message>
         <source>Stop mining</source>
@@ -641,11 +680,11 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Solo mining</source>
-        <translation>Mineração Solo</translation>
+        <translation>Mineração solo</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="vanished">Status</translation>
+        <translation>Status</translation>
     </message>
     <message>
         <source>Remove pool</source>
@@ -653,7 +692,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Mining status:</source>
-        <translation>Status de Mineração:</translation>
+        <translation>Status de mineração:</translation>
     </message>
 </context>
 <context>
@@ -668,7 +707,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Select language</source>
-        <translation>Selecionar Linguagem</translation>
+        <translation>Selecionar idioma</translation>
     </message>
 </context>
 <context>
@@ -687,7 +726,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation>Concluído</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -718,7 +757,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>Concluído</translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -729,7 +768,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation>Concluído</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -768,7 +807,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>Concluído</translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -779,7 +818,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>URI:</source>
-        <translation type="unfinished"></translation>
+        <translation>URI:</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -787,7 +826,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>Concluído</translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -802,19 +841,19 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Wallet</source>
-        <translation type="vanished">Carteira</translation>
+        <translation>Carteira</translation>
     </message>
     <message>
         <source>Unconfirmed:</source>
-        <translation>Não Confirmado:</translation>
+        <translation>A confirmar:</translation>
     </message>
     <message>
         <source>Balance:</source>
-        <translation type="vanished">Saldo:</translation>
+        <translation>Saldo:</translation>
     </message>
     <message>
         <source>Recent transactions</source>
-        <translation>Transações Recentes</translation>
+        <translation>Transações recentes</translation>
     </message>
     <message>
         <source>Balance</source>
@@ -822,7 +861,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Available balance:</source>
-        <translation>Saldo Disponível:</translation>
+        <translation>Saldo disponível:</translation>
     </message>
 </context>
 <context>
@@ -841,7 +880,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation>Concluído</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Wrong password</source>
@@ -851,8 +890,12 @@ Por favor aguarde...</translation>
 <context>
     <name>PaymentServer</name>
     <message>
-        <source>Cannot start karbowanec: click-to-pay handler</source>
+        <source>Cannot start niobiocash: click-to-pay handler</source>
         <translation>Não pode iniciar a wallet</translation>
+    </message>
+    <message>
+        <source>Cannot start niobio: click-to-pay handler</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -867,7 +910,7 @@ Por favor aguarde...</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Copy key</source>
@@ -893,8 +936,8 @@ Por favor aguarde...</translation>
         <translation>Carregando blockchain...</translation>
     </message>
     <message>
-        <source>%1 wallet already running</source>
-        <translation>Nióbio Wallet já está sendo executada</translation>
+        <source>%1 wallet already running or I cannot create lock file %2. Check your permissions.</source>
+        <translation>Niobio Cash Wallet já está sendo executada, ou estou tendo problema para criar o arquivo de lock em %2. Verifique suas permissões de escrita.</translation>
     </message>
     <message>
         <source>New version available</source>
@@ -906,12 +949,16 @@ Do you want to go to download page?</source>
         <translation>Há uma nova versão disponível.
 Você quer ir à página de dowload?</translation>
     </message>
+    <message>
+      <source>Wallet node %1 is not responding. Please select another one on Wallet Nodes Frame, or select AUTO on Settings->Connection page to use a local blockchain.</source>
+      <translation>O nó de carteira %1 não está respondendo. Por favor, selecione outro no painel de Wallet Nodes, ou configure o modo de conexão AUTO para usar uma blockchain local.</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveFrame</name>
     <message>
         <source>Frame</source>
-        <translation type="unfinished"></translation>
+        <translation>Frame</translation>
     </message>
     <message>
         <source>Copy address</source>
@@ -919,7 +966,7 @@ Você quer ir à página de dowload?</translation>
     </message>
     <message>
         <source>Save QR to file</source>
-        <translation>Savar para arquivo QR</translation>
+        <translation>Salvar para arquivo QR</translation>
     </message>
     <message>
         <source>Request payment</source>
@@ -935,7 +982,7 @@ Você quer ir à página de dowload?</translation>
     </message>
     <message>
         <source>Enter a label for this payer</source>
-        <translation type="vanished">Digite um label para esse pagamento </translation>
+        <translation>Digite um label para esse pagamento </translation>
     </message>
     <message>
         <source>Amount:</source>
@@ -978,7 +1025,7 @@ Você quer ir à página de dowload?</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Wallet path:</source>
@@ -1000,7 +1047,7 @@ Você quer ir à página de dowload?</translation>
         <translation></translation>
     </message>
     <message>
-        <source>Anonimity level:</source>
+        <source>Anonymity level:</source>
         <translation>Nível de privacidade:</translation>
     </message>
     <message>
@@ -1013,19 +1060,19 @@ Você quer ir à página de dowload?</translation>
     </message>
     <message>
         <source>Clear All</source>
-        <translation>Limpe tudo</translation>
+        <translation>Limpar Campos</translation>
     </message>
     <message>
         <source>Add Recipient</source>
-        <translation>Adicionar destinatário</translation>
+        <translation>Adicionar Destinatário</translation>
     </message>
     <message>
         <source>Balance:</source>
-        <translation type="vanished">Equilíbrio:</translation>
+        <translation>Balanço:</translation>
     </message>
     <message>
         <source>Fee:</source>
-        <translation>Comissão:</translation>
+        <translation>Taxa:</translation>
     </message>
     <message>
         <source>Payment identifier issued by payee (exchange, shop or other entity)</source>
@@ -1040,16 +1087,20 @@ Você quer ir à página de dowload?</translation>
         <translation>Gerar ID</translation>
     </message>
     <message>
-        <source>Wallet is connected through remote node. Additional 0.25% fee will be applied.</source>
-        <translation>A carteira é conectada através de um nó remoto. Será cobrada uma taxa adicional de 0,25%.</translation>
+        <source>Wallet is connected through remote node. Additional fee of %1% will be applied, until a maximum limit of 10 NBR.</source>
+        <translation>A carteira está conectada através de um nó remoto. Será cobrada uma taxa adicional de %1%, com um limite máximo de 10 NBR.</translation>
     </message>
     <message>
         <source>Remote node mode</source>
-        <translation>Modo Host Remoto</translation>
+        <translation>Modo Node Remoto</translation>
     </message>
     <message>
         <source>Available balance:</source>
         <translation>Saldo disponível:</translation>
+    </message>
+    <message>
+      <source>The remote node calculated fee for this transaction is:</source>
+      <translation>A taxa do node remoto calculada para esta transação é:</translation>
     </message>
 </context>
 <context>
@@ -1113,7 +1164,7 @@ Você quer ir à página de dowload?</translation>
     </message>
     <message>
         <source>Selected amount: </source>
-        <translation>Juntos em Favoritos: </translation>
+        <translation>Total selecionado: </translation>
     </message>
     <message>
         <source>Search for address, amount, transaction hash or Payment ID</source>
@@ -1149,11 +1200,11 @@ Você quer ir à página de dowload?</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="vanished">Contato:</translation>
+        <translation>Contato:</translation>
     </message>
     <message>
         <source>Add to Contacts:</source>
-        <translation type="vanished">Adicionar aos contatos:</translation>
+        <translation>Adicionar aos contatos:</translation>
     </message>
     <message>
         <source>Select recipient from Address Book</source>
@@ -1165,7 +1216,7 @@ Você quer ir à página de dowload?</translation>
     </message>
     <message>
         <source>Save to Contacts:</source>
-        <translation type="vanished">Salvar nos contatos:</translation>
+        <translation>Salvar nos contatos:</translation>
     </message>
     <message>
         <source>Save to Contacts as:</source>
@@ -1184,7 +1235,7 @@ Você quer ir à página de dowload?</translation>
     </message>
     <message>
         <source>Error: %1</source>
-        <translation>Erro:%1</translation>
+        <translation>Erro: %1</translation>
     </message>
 </context>
 <context>
@@ -1218,18 +1269,22 @@ Você quer ir à página de dowload?</translation>
     <name>WalletGui::AboutDialog</name>
     <message>
         <source>About %1 Wallet</source>
-        <translation>Sobre</translation>
+        <translation>Sobre %1</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Niobio Cash Wallet v. %1&lt;/p&gt;&lt;p&gt;This is the next generation anonymous cryptocurrency based on CryptoNote.&lt;/p&gt;&lt;p&gt;Copyright (c) 2012-2015. CryptoNote Developers&lt;br/&gt;Copyright (c) 2015-2016. DigitalNote Developers&lt;br/&gt;Copyright (c) 2016-2017. Karbowanec Developers&lt;br/&gt;Copyright (c) 2017-2019. Niobio Cash developers&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;https://cryptonote.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://cryptonote.org/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://karbowanec.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://karbowanec.com/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://niobiocash.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://niobiocash.org/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Niobio Cash Wallet v. %1&lt;/p&gt;&lt;p&gt;Niobio Cash: a moeda digital brasileira definitiva. Baseada na tecnologia CryptoNote, que garante anonimato.&lt;/p&gt;&lt;p&gt;Copyright (c) 2012-2015. CryptoNote Developers&lt;br/&gt;Copyright (c) 2015-2016. DigitalNote Developers&lt;br/&gt;Copyright (c) 2016-2017. Karbowanec Developers&lt;br/&gt;Copyright (c) 2017-2019. Niobio Cash developers&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;https://cryptonote.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://cryptonote.org/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://karbowanec.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://karbowanec.com/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://niobiocash.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://niobiocash.org/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>WalletGui::AccountFrame</name>
     <message>
         <source>Hide private keys</source>
-        <translation type="vanished">Ocultar chaves privadas</translation>
+        <translation>Ocultar chaves privadas</translation>
     </message>
     <message>
         <source>Show private keys</source>
-        <translation type="vanished">Mostrar chaves privadas</translation>
+        <translation>Mostrar chaves privadas</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>
@@ -1252,19 +1307,19 @@ Você quer ir à página de dowload?</translation>
     </message>
     <message>
         <source>Contact with such label and address already exists.</source>
-        <translation type="vanished">O contato com este nome e endereço já existe.</translation>
+        <translation>O contato com este nome e endereço já existe.</translation>
     </message>
     <message>
         <source>Copy &amp;label</source>
-        <translation>Copiar e nomear</translation>
+        <translation>Copiar &amp;label</translation>
     </message>
     <message>
         <source>Copy Payment &amp;ID</source>
-        <translation>Copiar e identificar;pagamento</translation>
+        <translation>Copiar &amp;ID de pagamento</translation>
     </message>
     <message>
         <source>Copy &amp;address</source>
-        <translation>Copiar;endereço</translation>
+        <translation>Copiar &amp;endereço</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
@@ -1345,15 +1400,15 @@ Você quer ir à página de dowload?</translation>
     </message>
     <message>
         <source>Specify list of peers to connect to only. If this option is given the options add-priority-node and seed-node are ignored</source>
-        <translation>Especifique a lista de participantes para se juntar. Se esta opção for especificada, os comandos add-priority-node e seed-node serão ignorados</translation>
+        <translation>Especifique a lista de nodes para se juntar. Se esta opção for especificada, os comandos add-priority-node e seed-node serão ignorados</translation>
     </message>
     <message>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
-        <translation>Conecte-se ao nó para obter endereços pyro e desconectar</translation>
+        <translation>Conecta ao node para obter endereços de pares e desconecta</translation>
     </message>
     <message>
         <source>Do not announce yourself as peerlist candidate</source>
-        <translation>Não se anuncie como candidato pirata</translation>
+        <translation>Não se anuncie como peer</translation>
     </message>
     <message>
         <source>Specify data directory</source>
@@ -1368,8 +1423,8 @@ Você quer ir à página de dowload?</translation>
         <translation>Execute o programa minimizado</translation>
     </message>
     <message>
-        <source>Karbowanec wallet</source>
-        <translation>Niobio wallet</translation>
+        <source>Niobio Cash Wallet</source>
+        <translation>Niobio Cash Wallet</translation>
     </message>
     <message>
         <source>External port for p2p network protocol (if port forwarding used with NAT)</source>
@@ -1379,8 +1434,8 @@ Você quer ir à página de dowload?</translation>
 <context>
     <name>WalletGui::ConfirmSendDialog</name>
     <message>
-        <source>Confirm sending %1 KRB</source>
-        <translation>Confirme enviar %1 NBR.</translation>
+        <source>Confirm sending %1 NBR</source>
+        <translation>Confirmar envio de %1 NBR</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Payment ID: %1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1388,7 +1443,7 @@ Você quer ir à página de dowload?</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Are you sure you want to send &lt;strong&gt;without Payment ID&lt;/strong&gt;?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Realmente quero enviar &lt;strong&gt;без ідентифікатора платежу&lt;/strong&gt;?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Realmente quero enviar &lt;strong&gt;sem ID de Pagamento&lt;/strong&gt;?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1447,7 +1502,11 @@ Você quer ir à página de dowload?</translation>
     <name>WalletGui::MainWindow</name>
     <message>
         <source>About %1 Wallet</source>
-        <translation>Sobre a carteira Nióbio Cash</translation>
+        <translation>Sobre a Carteira %1</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Niobio Cash Wallet v. %1&lt;/p&gt;&lt;p&gt;This is the next generation anonymous cryptocurrency based on CryptoNote.&lt;/p&gt;&lt;p&gt;Copyright (c) 2012-2015. CryptoNote Developers&lt;br/&gt;Copyright (c) 2015-2016. DigitalNote Developers&lt;br/&gt;Copyright (c) 2016-2017. Karbowanec Developers&lt;br/&gt;Copyright (c) 2017-2019. Niobio Cash developers&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;https://cryptonote.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://cryptonote.org/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://karbowanec.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://karbowanec.com/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://niobiocash.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://niobiocash.org/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Niobio Cash Wallet v. %1&lt;/p&gt;&lt;p&gt;Niobio Cash: a moeda digital brasileira definitiva. Baseada na tecnologia CryptoNote, que garante anonimato.&lt;/p&gt;&lt;p&gt;Copyright (c) 2012-2015. CryptoNote Developers&lt;br/&gt;Copyright (c) 2015-2016. DigitalNote Developers&lt;br/&gt;Copyright (c) 2016-2017. Karbowanec Developers&lt;br/&gt;Copyright (c) 2017-2019. Niobio Cash developers&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;https://cryptonote.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://cryptonote.org/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://karbowanec.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://karbowanec.com/&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://niobiocash.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://niobiocash.org/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>New wallet file</source>
@@ -1476,7 +1535,7 @@ Você quer ir à página de dowload?</translation>
     <message>
         <source>Your wallet will be reset and restored from blockchain.
 Are you sure?</source>
-        <translation>Sua carteira será redefinida e restaurada a partir do bloqueio.
+        <translation>Sua carteira será redefinida e restaurada a partir da blockchain.
 Você tem certeza?</translation>
     </message>
     <message>
@@ -1497,7 +1556,7 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>%1 peers</source>
-        <translation type="vanished">%1 peers</translation>
+        <translation>%1 peers</translation>
     </message>
     <message>
         <source>Synchronization in progress</source>
@@ -1517,15 +1576,15 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Language was changed</source>
-        <translation>A linguagem mudou</translation>
+        <translation>O idioma foi alterado</translation>
     </message>
     <message>
         <source>%1 Wallet %2</source>
-        <translation type="vanished">Wallet. %2 (%1)</translation>
+        <translation>Wallet. %2 (%1)</translation>
     </message>
     <message>
-        <source>More info can be found at www.karbowanec.com in Documentation section</source>
-        <translation>Para mais informações, acesse www.niobiocash.com</translation>
+        <source>More info can be found at project's web site: niobiocash.org</source>
+        <translation>Para mais informações, acesse www.niobiocash.org</translation>
     </message>
     <message>
         <source>Connection settings changed</source>
@@ -1533,19 +1592,19 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Connection mode will be changed after restarting the wallet.</source>
-        <translation>O modo de conexão atribuído será ativado após o reinício da carteira.</translation>
+        <translation>O modo de conexão atribuído será ativado após a carteira ser reiniciada.</translation>
     </message>
     <message>
         <source>Account toolbar</source>
-        <translation type="vanished">Conta</translation>
+        <translation>Conta</translation>
     </message>
     <message>
-        <source>Tracking wallet. Spending unawailable</source>
+        <source>Tracking wallet. Spending unavailable</source>
         <translation>Rastreamento de carteiras. Os custos não estão disponíveis</translation>
     </message>
     <message>
         <source>Connected through remote node</source>
-        <translation>Conecte-se via host remoto</translation>
+        <translation>Conectado via node remoto</translation>
     </message>
     <message numerus="yes">
         <source>%n active connection(s)</source>
@@ -1556,11 +1615,11 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Karbo Wallet %1</source>
-        <translation>Niobio Wallet %1</translation>
+        <translation>Niobio Cash Wallet %1</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
-        <translation>&amp; Show / Hide</translation>
+        <translation>&amp; Exibir / Ocultar</translation>
     </message>
     <message>
         <source>Show or hide the main window</source>
@@ -1568,15 +1627,15 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Total amount: %1, hash: %2</source>
-        <translation type="vanished">Quantidade: %1, hash: %2</translation>
+        <translation>Quantidade: %1, hash: %2</translation>
     </message>
     <message>
-        <source>Niobio Wallet</source>
-        <translation type="vanished">Niobio Wallet</translation>
+        <source>Niobio Cash Wallet</source>
+        <translation>Niobio Cash Wallet</translation>
     </message>
     <message>
         <source>New transaction received</source>
-        <translation type="vanished">Uma nova transação foi recebida</translation>
+        <translation>Uma nova transação foi recebida</translation>
     </message>
     <message>
         <source>Mnemonic seed is not correct</source>
@@ -1630,12 +1689,16 @@ Você tem certeza?</translation>
         <source>Wrong wallet file extension, wallet file should have &quot;.wallet&quot;, &quot;.keys&quot; or &quot;.trackingwallet&quot; extension.</source>
         <translation>A extensão de arquivo inválida, o arquivo de carteira deve ter extensões &quot;.wallet&quot;, &quot;.keys&quot; or &quot;.trackingwallet&quot; extension.</translation>
     </message>
+    <message>
+        <source>Niobio Cash Wallet %1</source>
+        <translation>Niobio Cash Wallet %1</translation>
+    </message>
 </context>
 <context>
     <name>WalletGui::MiningFrame</name>
     <message>
         <source>Mining. Hashrate: %1 H/s</source>
-        <translation type="vanished">Mining. Hashrate: %1 H/s</translation>
+        <translation>Mining. Hashrate: %1 H/s</translation>
     </message>
     <message>
         <source>Error: %1</source>
@@ -1702,7 +1765,7 @@ Você tem certeza?</translation>
     <name>WalletGui::ReceiveFrame</name>
     <message>
         <source>New PNG file</source>
-        <translation type="vanished">Novo arquivo PNG</translation>
+        <translation>Novo arquivo PNG</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -1728,14 +1791,14 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Incorrect fee value</source>
-        <translation>Valor da comissão inválida</translation>
+        <translation>Valor da taxa inválida</translation>
     </message>
     <message>
         <source>Invalid payment ID</source>
         <translation>ID de pagamento inválido</translation>
     </message>
     <message>
-        <source>Payment request should start with karbowanec:</source>
+        <source>Payment request should start with niobiocash:</source>
         <translation>Os requisitos de pagamento devem começar com o NBR:</translation>
     </message>
     <message>
@@ -1744,7 +1807,11 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Available balance is insufficient to send this transaction. Have you excluded a fee?</source>
-        <translation>O saldo disponível não é suficiente para enviar esta transação. Você esqueceu de retirar uma comissão?</translation>
+        <translation>O saldo disponível não é suficiente para enviar esta transação. Você esqueceu de retirar uma taxa?</translation>
+    </message>
+    <message>
+        <source>You will be able to send NBR when the wallet is synchronized</source>
+        <translation>Você poderá enviar NBR quando a carteira estiver sincronizada</translation>
     </message>
 </context>
 <context>
@@ -1762,10 +1829,10 @@ Você tem certeza?</translation>
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;span style=&quot; font-weight:600;&quot;&gt;Condição: &lt;/span&gt;%1&lt;/p&gt;&lt;br&gt;
-&lt;span style=&quot; font-weight:600;&quot;&gt;Data:&lt;/span&gt;%2&lt;/p&gt;&lt;br&gt;
-&lt;span style=&quot; font-weight:600;&quot;&gt;Data: &lt;/span&gt;%4&lt;/p&gt;&lt;br&gt;
+&lt;span style=&quot; font-weight:600;&quot;&gt;Data: &lt;/span&gt;%2&lt;/p&gt;&lt;br&gt;
+&lt;span style=&quot; font-weight:600;&quot;&gt;Destinatário: &lt;/span&gt;%4&lt;/p&gt;&lt;br&gt;
 &lt;span style=&quot; font-weight:600;&quot;&gt;Montante: &lt;/span&gt;%5&lt;/p&gt;&lt;br&gt;
-&lt;span style=&quot; font-weight:600;&quot;&gt;Comissão: &lt;/span&gt;%6&lt;/p&gt;&lt;br&gt;
+&lt;span style=&quot; font-weight:600;&quot;&gt;Taxa: &lt;/span&gt;%6&lt;/p&gt;&lt;br&gt;
 &lt;span style=&quot; font-weight:600;&quot;&gt;ID de pagamento: &lt;/span&gt;%7&lt;/p&gt;&lt;br&gt;
 &lt;span style=&quot; font-weight:600;&quot;&gt;Hash de transação: &lt;/span&gt;%8&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -1781,8 +1848,7 @@ Você tem certeza?</translation>
         <source>%n confirmation(s)</source>
         <translation>
             <numerusform>%n confirmação</numerusform>
-            <numerusform>%n confirmação</numerusform>
-            <numerusform>%n confirmação</numerusform>
+            <numerusform>%n confirmações</numerusform>
         </translation>
     </message>
 </context>
@@ -1794,23 +1860,27 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Copy transaction &amp;hash</source>
-        <translation>Cópia e transações amp;hash</translation>
+        <translation>Copiar &amp;hash da transação</translation>
     </message>
     <message>
         <source>Copy &amp;amount</source>
-        <translation>Cópia &amp;quantidade</translation>
+        <translation>Copiar &amp;quantidade</translation>
     </message>
     <message>
         <source>Copy Payment &amp;ID</source>
-        <translation>Cópia ID &amp;Pagamento</translation>
+        <translation>Copiar &amp;ID de pagamento</translation>
+    </message>
+    <message>
+        <source>See on &amp;block explorer</source>
+        <translation>Ver no explorador de &amp;blocos</translation>
     </message>
     <message>
         <source>Show &amp;details</source>
-        <translation>&amp;Leia mais</translation>
+        <translation>Mostrar &amp;detalhes</translation>
     </message>
     <message>
         <source>Unconfirmed</source>
-        <translation>Não confirmado</translation>
+        <translation>A confirmar</translation>
     </message>
     <message>
         <source>All</source>
@@ -1838,7 +1908,7 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Range...</source>
-        <translation>Range...</translation>
+        <translation>Período...</translation>
     </message>
     <message>
         <source>to</source>
@@ -1854,19 +1924,19 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Incoming</source>
-        <translation>Incoming</translation>
+        <translation>Recebimentos</translation>
     </message>
     <message>
         <source>Outgoing</source>
-        <translation>Fim de semana</translation>
+        <translation>Envios</translation>
     </message>
     <message>
         <source>Mined</source>
-        <translation>Mined</translation>
+        <translation>Minerados</translation>
     </message>
     <message>
         <source>Sent to myself</source>
-        <translation>Enviado para mim</translation>
+        <translation>Envios para mim</translation>
     </message>
 </context>
 <context>
@@ -1905,15 +1975,15 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Incoming transaction, unconfirmed</source>
-        <translation>Transação de entrada não confirmada</translation>
+        <translation>Transação de entrada, a confirmar</translation>
     </message>
     <message>
         <source>Mined, confirmations</source>
-        <translation>Concebido, não confirmado</translation>
+        <translation>Minerado, a confirmar</translation>
     </message>
     <message>
         <source>Sent to yourself, unconfirmed</source>
-        <translation>Transação de saída, não verificada</translation>
+        <translation>Enviado para você mesmo, a confirmar</translation>
     </message>
     <message>
         <source>Outgoing transaction, unconfirmed</source>
@@ -1922,33 +1992,29 @@ Você tem certeza?</translation>
     <message numerus="yes">
         <source>Incoming transaction, %n confirmation(s)</source>
         <translation>
-            <numerusform>Transação de entrada,%n de confirmação</numerusform>
-            <numerusform>Transação de entrada,%n de confirmação</numerusform>
-            <numerusform>Transação de entrada,%n de confirmação</numerusform>
+            <numerusform>Transação de entrada, %n confirmação</numerusform>
+            <numerusform>Transação de entrada, %n confirmações</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>Mined, %n confirmation(s)</source>
         <translation>
-            <numerusform>Construído,%n confirmação</numerusform>
-            <numerusform>Construído,%n confirmação</numerusform>
-            <numerusform>Construído,%n confirmação</numerusform>
+            <numerusform>Minerado, %n confirmação</numerusform>
+            <numerusform>Minerado, %n confirmações</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>Sent to yourself, %n confirmation(s)</source>
         <translation>
-            <numerusform>Excluído para si mesmo,%n confirmação</numerusform>
-            <numerusform>Excluído para si mesmo,%n confirmação</numerusform>
-            <numerusform>Excluído para si mesmo,%n confirmação</numerusform>
+            <numerusform>Enviado para você mesmo, %n confirmação</numerusform>
+            <numerusform>Enviado para você mesmo, %n confirmações</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>Outgoing transaction, %n confirmation(s)</source>
         <translation>
-            <numerusform>Transação de saída %n confirmação</numerusform>
-            <numerusform>Transação de saída %n confirmação</numerusform>
-            <numerusform>Transação de saída %n confirmação</numerusform>
+            <numerusform>Transação de saída, %n confirmação</numerusform>
+            <numerusform>Transação de saída, %n confirmações</numerusform>
         </translation>
     </message>
 </context>
@@ -1956,7 +2022,7 @@ Você tem certeza?</translation>
     <name>WalletGui::WalletAdapter</name>
     <message>
         <source>Opening wallet</source>
-        <translation>Abir Wallet</translation>
+        <translation>Abrir carteira</translation>
     </message>
     <message>
         <source>Importing keys</source>
@@ -1964,7 +2030,7 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Saving data</source>
-        <translation>Os dados são gravados</translation>
+        <translation>Salvando dados</translation>
     </message>
     <message>
         <source>Sending transaction</source>
@@ -1972,23 +2038,23 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Ready</source>
-        <translation>Pronto</translation>
+        <translation>Atualizando dados. Por favor, aguarde.</translation>
     </message>
     <message>
         <source>Synchronizing</source>
-        <translation>A sincronização está em andamento</translation>
+        <translation>Sincronizando</translation>
     </message>
     <message>
         <source>Wallet synchronized. Height: %1  |  Time (UTC): %2%3</source>
-        <translation>Sincronizado. Altura: %1 | Data e hora do último bloco (UTC): %2%3</translation>
+        <translation>Sincronizado. Altura: %1 | Data (UTC): %2%3</translation>
     </message>
     <message>
         <source>  Warning: last block was received %1 hours %2 minutes ago</source>
-        <translation>  Atenção: o último bloco recebeu %1 hora. %2 min então</translation>
+        <translation> | Último bloco recebido gerado há %1 hora(s) e %2 minuto(s) atrás</translation>
     </message>
     <message>
         <source>Object was not initialized</source>
-        <translation>Object não foi inicializado</translation>
+        <translation>Objeto não foi inicializado</translation>
     </message>
     <message>
         <source>The password is wrong</source>
@@ -2004,7 +2070,7 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>MixIn count is too big</source>
-        <translation> número de confusões é muito grande</translation>
+        <translation>Fator de anonimato muito alto</translation>
     </message>
     <message>
         <source>Bad address</source>
@@ -2020,11 +2086,11 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Sum overflow</source>
-        <translation>Valor da soma de transbordamento</translation>
+        <translation>Transbordo de soma</translation>
     </message>
     <message>
         <source>The destination is empty</source>
-        <translation>O Destinatário está vazio</translation>
+        <translation>O destinatário está vazio</translation>
     </message>
     <message>
         <source>Impossible to cancel transaction</source>
@@ -2040,7 +2106,7 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Transaction transfer impossible</source>
-        <translation>Transferência de transação não é possível</translation>
+        <translation>Transferência impossível</translation>
     </message>
     <message>
         <source>Wrong version</source>
@@ -2056,7 +2122,7 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Index is out of range</source>
-        <translation>O índice está fora do alcance</translation>
+        <translation>O índice está fora da faixa</translation>
     </message>
     <message>
         <source>Address already exists</source>
@@ -2092,7 +2158,7 @@ Você tem certeza?</translation>
     </message>
     <message>
         <source>Destination address not found</source>
-        <translation>Destino de destino não encontrado</translation>
+        <translation>Endereço de destino não encontrado</translation>
     </message>
     <message>
         <source>Wrong payment id format</source>
@@ -2117,6 +2183,35 @@ Você tem certeza?</translation>
     <message>
         <source>There must be an error in mnemonic seed. Make sure you entered it correctly.</source>
         <translation>Há uma falha na frase mnemônica. Verifique se você digitou corretamente.</translation>
+    </message>
+</context>
+<context>
+    <name>WalletNodesFrame</name>
+    <message>
+        <source>Use Selected Wallet Node</source>
+        <translation>Usar o Nó de Carteira Selecionado</translation>
+    </message>
+</context>
+<context>
+  <name>WalletGui::WalletNodesFrame</name>
+  <message>
+      <source>Change will take effect after restarting the wallet.</source>
+      <translation>Alteração terá efeito após a carteira ser reiniciada.</translation>
+  </message>
+</context>
+<context>
+    <name>WalletGui::WalletNodesModel</name>
+    <message>
+        <source>URL</source>
+        <translation>Endereço Internet</translation>
+    </message>
+    <message>
+        <source>Fee (%)</source>
+        <translation>Taxa (%)</translation>
+    </message>
+    <message>
+        <source>Loading...</source>
+        <translation>Conectando...</translation>
     </message>
 </context>
 </TS>
